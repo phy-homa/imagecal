@@ -6,21 +6,32 @@
 }
 /*ヘッダー*/
 .header{
-  height: 80px;
-  background-color: greenyellow;
+  height: 60px;
+  background-color: #FFCC66;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.header a{
+  text-decoration: none;
+}
 /*ロゴ*/
 .logo{
   width: 180px;
-  height: 100%;
-  background-color: rgb(42, 255, 166);
+  background-color: #FFCC66;
   color: white;
   text-align: center;
+  font-size: 55px;
+  font-weight: bold;
+  text-shadow: 1px 0px 0 green,
+  0 1px 0 green,
+  -1px 0 0 green,
+  0 -1px 0 green;
+  font-family: 'Poppins', sans-serif;
 }
+
+
 /*ユーザー 管理ボタンまとめ*/
 .user_button{
   width: 220px;
@@ -32,12 +43,18 @@
 /*各ユーザー管理ボタン*/
 .user_btn{
   width: 100px;
-  height: 50px;
+  height: 40px;
   text-align: center;
-  background-color: khaki;
-
+  border-radius:10px;
+  border: 1px solid green;
+  padding-top: 10px;
+  background-color: lightyellow;
 }
-
+.user_btn a{
+  color: #556B2F;
+  font-size: 15px;
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+}
 /*ヘッダー・フッダー以外のメイン*/
 .main{
   height: calc(100vh - 100px - 50px);

@@ -1,15 +1,20 @@
 <div class="page">
   <div class= "header">
-    <div class="logo">
-      <h1>ImageCal<h1>
-    </div>
+    <%= link_to "ImageCal", root_path, class:"logo" %>
     <div class="user_button">
       <% if user_signed_in? %>
-          <%= link_to "ログアウト", destroy_user_session_path, class:"user_btn", method: :delete %>
+        <div class="user_btn">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </div>
+        <div class="user_btn">
           <%= current_user.nickname %>
+        </div>
       <% else %>
-          <%= link_to "新規登録", new_user_path, class:"user_btn" %>
-          <%= link_to "ログイン",new_user_session_path, class:"user_btn" %>
+        <div class="user_btn">
+          <%= link_to "新規登録", new_user_path%>
+        </div>
+        <div class="user_btn">
+          <%= link_to "ログイン",new_user_session_path %>
         </div>
       <% end %> 
     </div>
