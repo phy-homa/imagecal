@@ -4,8 +4,14 @@
       <h1>ImageCal<h1>
     </div>
     <div class="user_button">
-      <%= link_to "新規登録", new_user_path, class:"user_btn" %>
-      <%= link_to "ログイン","#", class:"user_btn" %>
+      <% if user_signed_in? %>
+          <%= link_to "ログアウト", destroy_user_session_path, class:"user_btn", method: :delete %>
+          <%= current_user.nickname %>
+      <% else %>
+          <%= link_to "新規登録", new_user_path, class:"user_btn" %>
+          <%= link_to "ログイン",new_user_session_path, class:"user_btn" %>
+        </div>
+      <% end %> 
     </div>
   </div>
   <div class= "main">
@@ -29,8 +35,6 @@
     <p>____SNS認証も追加予定</p>
     <p>ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー </p>
     <p>7/28.Todo</p>
-    <p>devise導入</p>
-    <p>SNS認証学習</p>
     <p>投稿機能追加（タグは未実装）</p>
     <p>投稿一覧表示(新着順・いいね順は後日)</p>
     <p>時間があったら、タグについて学習</p>

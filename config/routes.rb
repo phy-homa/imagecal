@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "images#index"
-  resources :images, only: [:index, :new, :create]
+  resources :images, only: [:index, :new, :create, :destroy]
   resources :users, only: :new
 end
