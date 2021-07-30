@@ -2,6 +2,11 @@
 
 <%= @user.nickname %>
 <%= @user.email %>
+<% @images.each do |image| %>
+  <div class="picture_box">
+    <%= image_tag image.picture.variant(resize: '300x200') %>
+  </div>
+<% end %>
 
 ・ユーザー識別コード作成表示
 ・ユーザーアイコン
