@@ -1,0 +1,47 @@
+
+/*ヘッダー・フッダー以外のメイン*/
+.main{
+  height: calc(100vh - 100px - 50px);
+  background-color: white;
+  overflow: scroll;
+}
+
+/*アプリ概要*/
+.app_info{
+  width: 90%;
+  margin:10px auto;
+  height: 150px;
+  background-color: tomato;
+}
+/*投稿イラスト*/
+.picture_posts{
+  display: flex;
+  justify-content: right;
+}
+
+/*各投稿イラスト*/
+.content_box{
+  height: 250px;
+  width: 320px;
+  padding: 0 auto ;
+  margin-right: 15px;
+  border: 1px solid green;
+  display: block;
+  background-color: ivory;
+
+}
+
+/*Picture*/
+.picture_box{
+  height: 200px;
+  width: 300px;
+  background-color: white;
+  margin: 5px auto ;
+}
+/*User-info*/
+.user_info_box{
+  border-top: 1px solid green;
+  height: 40px;
+}
+
+

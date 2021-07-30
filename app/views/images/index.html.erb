@@ -44,10 +44,19 @@
     <p>投稿一覧表示(新着順・いいね順は後日)</p>
     <p>時間があったら、タグについて学習</p>
   
+  <div class="picture_posts">
   <% @images.each do |image| %>
-       <%= image_tag image.picture%>
-       <%= image.comment %>
+    <div class="content_box">
+      <div class="picture_box">
+        <%= image_tag image.picture.variant(resize: '300x200')%>
+      </div>
+      <div class="user_info_box">
+        <%= image.user.nickname %>
+      </div>
+    </div>
   <% end %>
+  </div>
+  
   </div>
   <div class= "footer"></div>
 </div>
