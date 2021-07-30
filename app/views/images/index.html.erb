@@ -29,7 +29,7 @@
   <% @images.each do |image| %>
     <div class="content_box">
       <div class="picture_box">
-        <%= image_tag image.picture.variant(resize: '330x220')%>
+        <%= link_to (image_tag image.picture.variant(resize: '330x220')), image_path(image.id)%>
       </div>
       <div class="user_info_box">
         <%= link_to image.user.nickname, user_path(image.user.id) %>
