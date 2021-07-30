@@ -2,10 +2,10 @@ class ImagesController < ApplicationController
 
   def index
     @images = Image.includes(:user)
-
   end
   def new
     @image = Image.new
+    @user = User.find(params[:id])
   end
 
   def create

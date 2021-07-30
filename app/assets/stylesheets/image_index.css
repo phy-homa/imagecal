@@ -43,5 +43,6 @@
   border-top: 1px solid green;
   height: 40px;
 }
-
-
+.user_info_box a{
+  text-decoration: none;
+}
