@@ -1,0 +1,23 @@
+
+/*ヘッダー・フッダー以外のメイン*/
+.main{
+  height: calc(100vh - 100px - 50px);
+  background-color: white;
+  overflow: scroll;
+}
+
+/*アプリ概要*/
+.app_info{
+  width: 90%;
+  margin:10px auto;
+  height: 150px;
+  background-color: tomato;
+}
+
+
+
+/*フッダー*/
+.footer{
+  height: 50px;
+  background-color: lightseagreen;
+}
