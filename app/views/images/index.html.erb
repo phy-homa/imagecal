@@ -43,9 +43,11 @@
     <p>投稿機能追加（タグは未実装）</p>
     <p>投稿一覧表示(新着順・いいね順は後日)</p>
     <p>時間があったら、タグについて学習</p>
-
-
-       
+  
+  <% @images.each do |image| %>
+       <%= image_tag image.picture%>
+       <%= image.comment %>
+  <% end %>
   </div>
   <div class= "footer"></div>
 </div>

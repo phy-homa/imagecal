@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
 
   def index
+    @images = Image.includes(:user)
 
   end
   def new
@@ -18,6 +19,6 @@ class ImagesController < ApplicationController
 
   private
   def image_params
-    params.require(:image).permit(:comment).merge(user_id: current_user.id)
+    params.require(:image).permit(:comment, :picture).merge(user_id: current_user.id)
   end
 end
