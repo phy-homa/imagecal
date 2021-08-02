@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2021_08_02_090606) do
     t.integer "season_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_images_on_user_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -82,5 +84,6 @@ ActiveRecord::Schema.define(version: 2021_08_02_090606) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "image_tag_relations", "images"
   add_foreign_key "image_tag_relations", "tags"
+  add_foreign_key "images", "users"
   add_foreign_key "sns_credentials", "users"
 end
