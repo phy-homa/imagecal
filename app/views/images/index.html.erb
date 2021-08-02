@@ -15,6 +15,9 @@
       </div>
       <div class="user_info_box">
         <%= link_to image.user.nickname, user_path(image.user.id) %>
+        <% image.tags.each do |tag|%>
+          <%= "##{tag.name}" %>
+        <% end%>
       </div>
     </div>
   <% end %>

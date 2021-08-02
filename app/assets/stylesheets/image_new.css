@@ -1,1 +1,38 @@
+.form{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgreen;
+  align-items: center;
+  margin: 10px auto;
+  padding-top: 15px;
+  
+}
+.picture-form,
+.comment-form,
+.season-form,
+.tag-form,
+.submit-form{
+  width: 600px;
+  margin-top: 20px;
+}
+.picture-form{
+  height: 450px;
+  padding: 10px;
+  border: 1px solid green;
+}
+.tag-box,
+.comment-box{
+  width: 550px;
+}
 
+
+
+.submit-form{
+display: flex;
+justify-content: center;
+}
+.submit-btn{
+  padding: auto;
+}

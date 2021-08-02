@@ -26,14 +26,17 @@ belongs_to :user, optional: true
 
 
 ## Imagesテーブル
-| Column  | Type | Options |
-| ------- | ---- | ------- |
-| comment | text |         |
+| Column    | Type    | Options     |
+| --------- | ------- | ----------- |
+| comment   | text    |             |
+| season_id | integer | null: false |
 
 ### Associations
   belongs_to :user
   has_one_attached :picture
   has_many :orders
+  has_many :tags, through: :image_tag_relations
+  has_many :image_tag_relations
 
 
 ## Tagsテーブル
