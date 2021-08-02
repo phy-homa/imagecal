@@ -1,24 +1,79 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usersテーブル
+| Column    | Type   | Options     |
+| --------- | ------ | ----------- |
+| nickname  | string | null: false |
+| firstname | string | null: false |
+| lastname  | string | null: false |
+| email     | string | null: false |
+| encrypted | string | null; false |
 
-Things you may want to cover:
+### Associations
+  has_many :images
+  has_many :sns_credentials
+  has_many :orders
 
-* Ruby version
+## Sns_credentialsテーブル
+| Column   | Type       | Options           |
+| -------- | ---------- | ----------------- |
+| provider | string     |                   |
+| uid      | string     |                   |
+| user     | references | foreign_key: true |
 
-* System dependencies
+### Associations
+belongs_to :user, optional: true
 
-* Configuration
 
-* Database creation
+## Imagesテーブル
+| Column  | Type | Options |
+| ------- | ---- | ------- |
+| comment | text |         |
 
-* Database initialization
+### Associations
+  belongs_to :user
+  has_one_attached :picture
+  has_many :orders
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Tagsテーブル
+| Column | Type   | Options                       |
+| ------ | ------ | ----------------------------- |
+| name   | string | null: false, uniqueness: true |
 
-* Deployment instructions
+### Associations
+  has_many :images, through: :image_tag_relations
+  has_many :image_tag_relations
 
-* ...
+
+## Image_tag_relationsテーブル
+| Column  | Type       | Options           |
+| ------- | ---------- | ----------------- |
+| image   | references | foreign_key: true |
+| tag     | references | foreign_key: true |
+
+### Associations
+  belongs_to :image
+  belongs_to :tag
+
+## Ordersテーブル
+| Column  | Type       | Options           |
+| ------- | ---------- | ----------------- |
+| user    | references | foreign_key: true |
+| image   | references | foreign_key: true |
+
+### Associations
+  belongs_to :user
+  belongs_to :image
+
+## Mailingsテーブル
+| Column        | Type    | Options     |
+| ------------- | ------- | ----------- |
+| postal_code   | string  | null: false |
+| prefecture_id | integer | null: false |
+| city          | string  | null: false |
+| building      | string  |             |
+| tel           | string  | null: false |
+
+### Associations
+  has_one :order
