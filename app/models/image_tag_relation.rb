@@ -1,0 +1,2 @@
+class ImageTagRelation < ApplicationRecord
+end
