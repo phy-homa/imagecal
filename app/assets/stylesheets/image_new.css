@@ -1,1 +1,37 @@
+.form{
+  width: 80vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgreen;
+  align-items: center;
+  margin: 20px auto;
+  
+}
+.picture-form{
+  margin-bottom: 100px;
+  width: 70%;
+}
+.comment-form{
+  margin-bottom: 20px;
+  width: 70%;
+}
+.comment-box{
+  width: 100%;
+}
+.tag-form{
+  margin-bottom: 20px;
+  width: 70%;
+}
 
+.tag-box{
+  width: 100%;
+}
+
+.submit-form{
+display: flex;
+justify-content: center;
+}
+.submit-btn{
+  padding: auto;
+}

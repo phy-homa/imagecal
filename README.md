@@ -34,6 +34,8 @@ belongs_to :user, optional: true
   belongs_to :user
   has_one_attached :picture
   has_many :orders
+  has_many :tags, through: :image_tag_relations
+  has_many :image_tag_relations
 
 
 ## Tagsテーブル
