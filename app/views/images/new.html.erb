@@ -1,13 +1,14 @@
-投稿ページ
+toukou
 <%= form_with model: @image, url: images_path, local: true do |f| %>
 <div class="form">
   <div class="picture-form">
-    <%= f.label :picture, "イラスト" %><br />
+    <%= f.label :picture, "イラスト" %>
     <%= f.file_field :picture, id: "image_picture" %>
+    <div id="picture-preview"></div>
   </div>
   <div class="comment-form">
     <%= f.label :comment, "投稿者コメント" %><br />
-    <%= f.text_area :comment, placeholder: "投稿者コメント欄", rows: "3", class:"comment-box"%>
+    <%= f.text_area :comment, placeholder: "投稿者コメント欄", rows: "5", class:"comment-box"%>
   </div>
   <div class="tag-form">
     <%= f.label :name, "タグ" %><br />

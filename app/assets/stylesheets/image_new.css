@@ -1,32 +1,31 @@
 .form{
-  width: 80vw;
-  height: 70vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: lightgreen;
   align-items: center;
-  margin: 20px auto;
+  margin: 10px auto;
+  padding-top: 15px;
   
 }
+.picture-form,
+.comment-form,
+.tag-form,
+.submit-form{
+  width: 600px;
+  margin-top: 20px;
+}
 .picture-form{
-  margin-bottom: 100px;
-  width: 70%;
+  height: 450px;
+  padding: 10px;
+  border: 1px solid green;
 }
-.comment-form{
-  margin-bottom: 20px;
-  width: 70%;
-}
-.comment-box{
-  width: 100%;
-}
-.tag-form{
-  margin-bottom: 20px;
-  width: 70%;
+.comment-box,
+.tag-box{
+  width: 550px;
 }
 
-.tag-box{
-  width: 100%;
-}
 
 .submit-form{
 display: flex;
