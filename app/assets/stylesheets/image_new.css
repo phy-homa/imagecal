@@ -11,6 +11,7 @@
 }
 .picture-form,
 .comment-form,
+.season-form,
 .tag-form,
 .submit-form{
   width: 600px;
@@ -21,12 +22,11 @@
   padding: 10px;
   border: 1px solid green;
 }
+.tag-box,
 .comment-box{
   width: 550px;
 }
-.tag-box{
-  width: 180px;
-}
+
 
 
 .submit-form{

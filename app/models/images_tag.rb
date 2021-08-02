@@ -7,6 +7,7 @@ class ImagesTag
     validates :picture
     validates :name
   end
+  validates :season_id, numericality:{ other_than: 1, messages: "can't be blank"}
 
   def save
     image = Image.create(comment: comment, picture: picture, user_id: user_id)

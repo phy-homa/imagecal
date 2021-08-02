@@ -23,6 +23,6 @@ class ImagesController < ApplicationController
 
   private
   def image_params
-    params.require(:images_tag).permit(:comment, :picture, :name).merge(user_id: current_user.id)
+    params.require(:images_tag).permit(:comment, :picture, :season_id, :name).merge(user_id: current_user.id)
   end
 end

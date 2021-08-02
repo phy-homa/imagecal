@@ -26,9 +26,10 @@ belongs_to :user, optional: true
 
 
 ## Imagesテーブル
-| Column  | Type | Options |
-| ------- | ---- | ------- |
-| comment | text |         |
+| Column    | Type    | Options     |
+| --------- | ------- | ----------- |
+| comment   | text    |             |
+| season_id | integer | null: false |
 
 ### Associations
   belongs_to :user

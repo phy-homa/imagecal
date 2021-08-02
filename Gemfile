@@ -62,4 +62,5 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth', '~>1.9.1'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+gem 'active_hash'
 
