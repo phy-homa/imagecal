@@ -1,4 +1,4 @@
-class AddUserToImages < ActiveRecord::Migration[6.0]
+class AddUserToImage < ActiveRecord::Migration[6.0]
   def change
     add_reference :images, :user, null: false, foreign_key: true
   end

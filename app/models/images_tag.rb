@@ -7,12 +7,12 @@ class ImagesTag
     validates :picture
     validates :name
   end
-  
 
   def save
     image = Image.create(comment: comment, picture: picture, user_id: user_id)
-    tag = Tag.create(name: name)
-
+    tag = Tag.where(name: name).first_or_initialize
+    tag.save
+    
     ImageTagRelation.create(image_id: image.id, tag_id: tag.id)
   end
 end
