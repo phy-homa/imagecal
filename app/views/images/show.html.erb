@@ -2,3 +2,5 @@
 <%= image_tag @image.picture%>
 <%= @image.user.nickname %>
 <%= @image.comment%>
+
+<%= link_to 'カートに入れる', add_item_path(image_id: @image.id), html_options = {method: :post} %>
