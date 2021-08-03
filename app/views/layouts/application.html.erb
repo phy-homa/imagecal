@@ -30,6 +30,9 @@
           <div class="mypage">
             <li class="menu-select"><%= link_to "マイページ", user_path(current_user.id) %></li>
           </div>
+          <div class="cart-inside">
+            <li class="menu-select"><%= link_to "カートのなか", "#" %></li>
+          </div>
         </ul>
       <% else %>
         <div class="user_btn">

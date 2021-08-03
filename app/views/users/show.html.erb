@@ -2,6 +2,7 @@
 
 <%= @user.nickname %>
 <%= @user.email %>
+<h1>投稿イラスト一覧</h1>
 <% @images.each do |image| %>
   <div class="picture_box">
     <%= image_tag image.picture.variant(resize: '300x200') %>
