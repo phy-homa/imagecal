@@ -34,15 +34,17 @@
 
 /*ユーザー 管理ボタンまとめ*/
 .user_button{
-  width: 220px;
+  width: 300px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 10px;
+  position: relative;
+  margin-right: 30px;
 }
 
 /*各ユーザー管理ボタン*/
+.username_btn,
 .user_btn{
-  width: 100px;
   height: 40px;
   text-align: center;
   border-radius:10px;
@@ -50,10 +52,46 @@
   padding-top: 10px;
   background-color: lightyellow;
 }
+.user_btn{
+  width: 100px;
+}
+.username_btn{
+  width: 180px;
+}
+.username_btn a,
 .user_btn a{
   color: #556B2F;
   font-size: 15px;
   font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+}
+.menu-list{
+  width: 130px;
+  height: 90px;
+  border: 1px solid #00552e;
+  background-color: white;
+  position: absolute;
+  top: 70px;
+  left: 200px;
+  border-radius:5px;
+  text-align: center;
+  font-size: 18px;
+  display: none;
+}
+.menu-list li{
+  list-style: none;
+}
+.menu-list a{
+  color: #00552e;
+}
+.logout,
+.mypage
+.cart-inside{
+  height: 30px;
+}
+
+.logout,
+.mypage{
+  border-bottom: 1px solid #00552e;
 }
 
 
