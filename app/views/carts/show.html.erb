@@ -1,5 +1,11 @@
 カートの中身
 
 <% @line_items.each do |line_item|%>
-  <%= line_item.image_id %>
+<div class="select-image">
+  <%= image_tag line_item.image.picture.variant(resize: '330x220') %>
+  <%= line_item.image.user.nickname %>
+  <% line_item.image.tags.each do |tag|%>
+    <%= "##{tag.name}" %>
+  <% end%>
+</div>
 <% end %>
