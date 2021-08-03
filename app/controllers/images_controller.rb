@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+  
 
   def index
     @images = Image.includes(:user).order(created_at: :desc)
