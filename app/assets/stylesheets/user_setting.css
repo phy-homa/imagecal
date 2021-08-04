@@ -1,0 +1,33 @@
+.setting{
+  background-color: cornflowerblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.setting-email,
+.setting-nickname{
+  height: 40px;
+  width: 600px;
+  font-size: 20px;
+  padding-left: 10px;
+  border: 1px solid green;
+  background-color: honeydew;
+}
+
+.setting-icon{
+  height: 280px;
+  width: 280px;
+  margin-top: 10px;
+  border: 1px solid green;
+  background-color: honeydew;
+}
+.setting-introduce{
+  margin-top: 10px;
+  padding: 10px;
+  background-color: honeydew;
+  width: 600px;
+  height: 100px;
+  border: 1px solid green;
+}

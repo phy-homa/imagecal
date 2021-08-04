@@ -1,0 +1,13 @@
+.post_pictures{
+  width: 100vw;
+  height: 350px;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  overflow: scroll;
+}
+.picture_box{
+  border: 1px solid coral;
+  margin-left: 10px;
+}

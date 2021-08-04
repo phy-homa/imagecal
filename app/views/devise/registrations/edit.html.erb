@@ -2,6 +2,10 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -31,6 +35,16 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :icon, "ユーザーアイコン" %>
+    <%= f.file_field :icon, id: "user_icon" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :introduce, "自己紹介（任意）" %><br />
+    <%= f.text_field :introduce  %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
@@ -40,4 +54,4 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back",setting_path, html_options = {method: :post}  %>

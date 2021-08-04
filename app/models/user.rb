@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :images
   has_many :sns_credentials
+  has_one_attached :icon
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
