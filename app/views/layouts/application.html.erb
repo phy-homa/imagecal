@@ -28,7 +28,7 @@
             <li class="menu-selct"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           </div>
           <div class="mypage">
-            <li class="menu-select"><%= link_to "マイページ", user_path(current_user.id) %></li>
+            <li class="menu-select"><%= link_to "設定", setting_path, html_options = {method: :post} %></li>
           </div>
           <div class="cart-inside">
             <li class="menu-select"><%= link_to "カートのなか", "#" %></li>

@@ -8,4 +8,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @images = @user.images.all
   end
+
+  def setting
+    @user = current_user
+  end
 end
