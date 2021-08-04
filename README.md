@@ -8,6 +8,7 @@
 | lastname  | string | null: false |
 | email     | string | null: false |
 | encrypted | string | null; false |
+| introduce | text   |             |
 
 ### Associations
 - has_many :images
@@ -62,32 +63,36 @@
 - belongs_to :tag
 
 ## Ordersテーブル
-| Column  | Type       | Options           |
-| ------- | ---------- | ----------------- |
-| user    | references | foreign_key: true |
-| image   | references | foreign_key: true |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| image   | references | null: false, foreign_key: true |
+| cart    | references | null: false, foreign_key: true |
 
 ### Associations
 - belongs_to :user
 - belongs_to :image
+- belongs_to :mailing
 
 ## Mailingsテーブル
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| postal_code   | string  | null: false |
-| prefecture_id | integer | null: false |
-| city          | string  | null: false |
-| building      | string  |             |
-| tel           | string  | null: false |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| postal_code   | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| city          | string     | null: false                    |
+| building      | string     |                                |
+| tel           | string     | null: false                    |
+| order         | references | null: false, foreign_key: true |
 
 ### Associations
 - has_one :order
 
 ## line_itemsテーブル
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| image  | references | null: false, foreign_key: true |
-| cart   | references | null: false, foreign_key: true |
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| image    | references | null: false, foreign_key: true |
+| cart     | references | null: false, foreign_key: true |
+| quantity | integer    | null: false                    |
 
 ### Associations
 - belongs_to :image
