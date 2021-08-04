@@ -5,29 +5,27 @@
       アプリ概要
     </div>
     <%= link_to "投稿", new_image_path, class:"image_post"%>
-    
   <h1>新着順</h1>
   <div class="picture_posts">
-  <% @images.each do |image| %>
-    <div class="content_box">
-      <div class="picture_box">
-        <%= link_to (image_tag image.picture.variant(resize: '330x220')), image_path(image.id)%>
+    <% @images.each do |image| %>
+      <div class="content_box">
+        <div class="picture_box">
+          <%= link_to (image_tag image.picture.variant(resize: '330x220')), image_path(image.id)%>
+        </div>
+        <div class="user_info_box">
+          <%= link_to image.user.nickname, user_path(image.user.id) %>
+          <% image.tags.each do |tag|%>
+            <%= "##{tag.name}" %>
+          <% end%>
+        </div>
       </div>
-      <div class="user_info_box">
-        <%= link_to image.user.nickname, user_path(image.user.id) %>
-        <% image.tags.each do |tag|%>
-          <%= "##{tag.name}" %>
-          
-        <% end%>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
   </div>
-<% unless @cart.nil? %>
-  <%= link_to "カート", cart_path(@cart.id) %>
-<% end %>
-  
-  
+  <div class="cart-inside">
+    <% if user_signed_in? %>
+      <% unless @cart.nil? %>
+        <%= link_to (image_tag 'icon_cart.png', class:"cart-icon"), cart_path(@cart.id) %>
+      <% end %>
+    <% end %>
   </div>
-  <div class= "footer"></div>
 </div>
