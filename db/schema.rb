@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 2021_08_05_032933) do
   end
 
   create_table "image_orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "image_id", null: false
-    t.bigint "order_id", null: false
+    t.bigint "image_id"
+    t.bigint "order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["image_id"], name: "index_image_orders_on_image_id"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2021_08_05_032933) do
     t.string "postal_code", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
+    t.string "address", null: false
     t.string "building"
     t.string "tel", null: false
     t.bigint "order_id", null: false

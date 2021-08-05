@@ -80,7 +80,8 @@
 
 ### Associations
 - belongs_to :user
-- has_many :images
+- has_many :images, through: :image_orders
+- has_many :image_orders
 - has_one :mailing
 
 ## Mailingsテーブル
@@ -110,4 +111,4 @@
 
 ### Associations
 - has_many :images, through: :line_items
-- has_many :line_items
+- has_many :line_items, dependent: :destroy
