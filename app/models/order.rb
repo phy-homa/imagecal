@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :user
-  belongs_to :image
-  belongs_to :mailing
+  has_many :images, through: :image_orders
+  has_many :image_orders
+  has_one :mailing
 end
