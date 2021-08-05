@@ -12,7 +12,7 @@
 
 ### Associations
 - has_many :images
-- has_many :sns_credentials
+- has_one :sns_credentials
 - has_many :orders
 
 ## Sns_credentialsテーブル
@@ -34,12 +34,12 @@
 
 ### Associations
 - belongs_to :user
-- has_one_attached :picture
-- has_many :orders
+- has_many :orders, through: :image_orders
+- has_many :image_orders
 - has_many :tags, through: :image_tag_relations
 - has_many :image_tag_relations
-- has_many :line_items
 - has_many :carts, through: :line_items
+- has_many :line_items
 
 
 ## Tagsテーブル
@@ -62,17 +62,26 @@
 - belongs_to :image
 - belongs_to :tag
 
+## Image_ordersテーブル
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| image  | references | null: false, foreign_key: true |
+| order  | references | null: false, foreign_key: true |
+
+### Associations
+- belongs_to :image
+- belongs_to :order
+
+
 ## Ordersテーブル
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| user    | references | null: false, foreign_key: true |
-| image   | references | null: false, foreign_key: true |
-| cart    | references | null: false, foreign_key: true |
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
 
 ### Associations
 - belongs_to :user
-- belongs_to :image
-- belongs_to :mailing
+- has_many :images
+- has_one :mailing
 
 ## Mailingsテーブル
 | Column        | Type       | Options                        |
@@ -85,15 +94,20 @@
 | order         | references | null: false, foreign_key: true |
 
 ### Associations
-- has_one :order
+- belongs_to :order
 
 ## line_itemsテーブル
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
 | image    | references | null: false, foreign_key: true |
 | cart     | references | null: false, foreign_key: true |
-| quantity | integer    | null: false                    |
 
 ### Associations
 - belongs_to :image
 - belongs_to :cart
+
+## cartsテーブル
+
+### Associations
+- has_many :images, through: :line_items
+- has_many :line_items
