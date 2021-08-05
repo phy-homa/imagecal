@@ -1,0 +1,8 @@
+注文画面
+
+<%= form_with model:@order, class:"order-form", local: true do |f| %>
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity %>
+
+  <%= f.submit "購入", class:"button" %>
+<% end %>
