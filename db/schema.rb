@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 2021_08_05_032933) do
   create_table "image_orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "image_id"
     t.bigint "order_id"
+    t.bigint "cart_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_image_orders_on_cart_id"
     t.index ["image_id"], name: "index_image_orders_on_image_id"
     t.index ["order_id"], name: "index_image_orders_on_order_id"
   end
@@ -126,6 +128,7 @@ ActiveRecord::Schema.define(version: 2021_08_05_032933) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "image_orders", "carts"
   add_foreign_key "image_orders", "images"
   add_foreign_key "image_orders", "orders"
   add_foreign_key "image_tag_relations", "images"
