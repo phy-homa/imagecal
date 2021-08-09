@@ -2,22 +2,40 @@ require 'rails_helper'
 
 RSpec.describe "新規登録", type: :system do
   before do
-    @user = FactoryBot.create(:user)
+    @user = FactoryBot.build(:user)
   end
-
   # bundle exec rspec spec/system/users_spec.rb
 
   context '新規登録できる時' do
     it 'メールアドレス入力を選択し、必要項目を入力と、新規登録できる' do
       # トップページに移動する
+      visit root_path
       # トップページに新規登録ボタンがあることを確認する
+      expect(page).to have_content('新規登録')
       # 認証方法選択ページへ遷移する
+      visit new_user_path
       # 認証を利用しないを選択し、新規登録ページに遷移する
+      visit new_user_registration_path
       # ユーザー情報を入力する
+      fill_in 'Nickname', with: @user.nickname
+      fill_in 'Firstname', with: @user.firstname
+      fill_in 'Lastname', with: @user.lastname
+      fill_in 'Email', with: @user.email
+      fill_in 'Password', with: @user.password
+      fill_in 'Password confirmation', with: @user.password
       # 登録ボタンを押す
+      expect{
+        find('input[name="commit"]').click
+      }.to change{User.count}.by(1)
       # トップページへ遷移することを確認する
-      # カーソルを合わせるとログアウトボタンとユーザー名が表示されることを確認する
+      expect(current_path).to eq root_path 
+      # ユーザー名、カーソルを合わせるとログアウトボタンが表示されることを確認する
+      expect(page).to have_content(@user.nickname)
+      find('.menu').click
+      expect(page).to have_content('ログアウト')
       # サインアップページへ遷移するボタンやログインページへ遷移するボタンが表示されていないことを確認する
+      expect(page).to have_no_content('新規登録')
+      expect(page).to have_no_content('ログイン')
     end
     it 'google認証を用いて、必要項目を入力すると、新規登録できる' do
       # トップページに移動する
@@ -45,12 +63,25 @@ RSpec.describe "新規登録", type: :system do
   context '新規登録できない時' do
     it '入力内容にミスがあると、新規登録ができない' do
       #トップページに移動する
+      visit root_path
       # トップページに新規登録ボタンがあることを確認する
+      expect(page).to have_content('新規登録')
       # 認証方法選択ページへ遷移する
+      visit new_user_path
       # 認証を利用しないを選択し、新規登録ページに遷移する
-      # ユーザー情報を入力する
-      # ログインボタンを押す
-      # ログインページへ戻されることを確認する
+      visit new_user_registration_path
+      # ユーザー情報を入力する(nickname未入力)
+      fill_in 'Firstname', with: @user.firstname
+      fill_in 'Lastname', with: @user.lastname
+      fill_in 'Email', with: @user.email
+      fill_in 'Password', with: @user.password
+      fill_in 'Password confirmation', with: @user.password
+      # 登録ボタンを押す
+      expect{
+        find('input[name="commit"]').click
+      }.to change{User.count}.by(0)
+      # 新規登録ページへ戻されることを確認する
+      expect(current_path).to eq user_registration_path
     end
   end
 end
@@ -63,24 +94,42 @@ RSpec.describe "ログイン", type: :system do
   context 'ログインできる時' do
     it '保存されているユーザー情報と一致すれば、ログインできる' do
       # トップページに移動する
+      visit root_path
       # トップページにログインページへ遷移するボタンがあることを確認する
+      expect(page).to have_content('ログイン')
       # ログインページへ遷移する
+      visit new_user_session_path
       # 正しいユーザー情報を入力する
+      fill_in 'Email', with: @user.email
+      fill_in 'Password', with: @user.password
       # ログインボタンを押す
+      click_on 'Log in'
       # トップページへ遷移することを確認する
-      # カーソルを合わせるとログアウトボタンが表示されることを確認する
+      expect(current_path).to eq root_path
+      # ユーザー名、カーソルを合わせるとログアウトボタンが表示されることを確認する
+      expect(page).to have_content(@user.nickname)
+      find('.menu').click
+      expect(page).to have_content('ログアウト')
       # サインアップページへ遷移するボタンやログインページへ遷移するボタンが表示されていないことを確認する
-
+      expect(page).to have_no_content('新規登録')
+      expect(page).to have_no_content('ログイン')
     end
   end
   context 'ログインできない時' do
     it '保存されているユーザー情報と一致しないと、ログインできない' do
       #トップページに移動する
+      visit root_path
       # トップページにログインページへ遷移するボタンがあることを確認する
+      expect(page).to have_content('ログイン')
       # ログインページへ遷移する
-      # ユーザー情報を入力する
+      visit new_user_session_path
+      # ユーザー情報を入力する(Email不一致)
+      fill_in 'Email', with: "123123213@test.com"
+      fill_in 'Password', with: @user.password
       # ログインボタンを押す
+      click_on 'Log in'
       # ログインページへ戻されることを確認する
+      expect(current_path).to eq user_session_path
     end
   end
 end
