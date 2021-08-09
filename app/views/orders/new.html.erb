@@ -1,14 +1,14 @@
 注文画面
 
-<%= form_with model:@order_mailing, url: orders_path, class:"order-form", local: true do |f| %>
+<%= form_with model:@order_mailing, url: orders_path, class:"order-form", id: "charge-form", local: true do |f| %>
   <div class="card-data">
     <div class="card-num">
       <%= f.label :number,"カード番号 　　：" %>
-      <%= f.text_field :price, placeholder: "カード番号（半角数字）", maxlength:"16", class:"cardnum-box" %>
+      <%= f.text_field :number, placeholder: "カード番号（半角数字）", maxlength:"16", class:"cardnum-box" %>
     </div>
     <div class="expiration">
       <p>有効期限 　　　：</p>
-      <%= f.text_field :exp_manth, placeholder:"ex)3", maxlength:"2", class:"exp-box" %>
+      <%= f.text_field :exp_month, placeholder:"ex)3", maxlength:"2", class:"exp-box" %>
       <p>月</p>
       <%= f.text_field :exp_year, placeholder:"ex)23", maxlength:"2", class:"exp-box" %>
       <p>年</p>
@@ -46,7 +46,7 @@
     </div>
   </div>
   <div class="submit-button">
-      <%= f.submit "購入", class:"mailing-button" %>
+      <%= f.submit "購入", class:"mailing-button", id:"mailing-button" %>
   </div>
 <% end %>
 
