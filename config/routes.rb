@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post '/setting' => 'users#setting'
   resources :carts, only:[:show, :destroy]
   post '/add_item' => 'carts#add_item'
+  resources :orders, only: [:new, :create]
 end

@@ -3,6 +3,7 @@ class ImagesController < ApplicationController
 
   def index
     @images = Image.includes(:user).order(created_at: :desc)
+    @cart = Cart.find_by(id: session[:cart_id])
   end
   def new
     @image = ImageTag.new

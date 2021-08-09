@@ -4,46 +4,47 @@
     <title>Imagecal</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="https://js.pay.jp/v1/"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   </head>
 
   <body>
-  <div class= "header">
-    <%= link_to "ImageCal", root_path, class:"logo" %>
-    <div class="user_button">
-    <% if user_signed_in? %>
-        <div class="username_btn">
-          <%= link_to current_user.nickname, user_path(current_user.id) %>
-        </div>
-        <div class="menu">
-          <%= image_tag 'icon_menu.png', size: "55x55", id: "menutab"%>
-        </div>
-        <ul class="menu-list", id="menu-list"> 
-          <div class="logout">
-            <li class="menu-selct"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+    <div class= "header">
+      <%= link_to "ImageCal", root_path, class:"logo" %>
+      <div class="user_button">
+        <% if user_signed_in? %>
+          <div class="username_btn">
+            <%= link_to current_user.nickname, user_path(current_user.id) %>
           </div>
-          <div class="mypage">
-            <li class="menu-select"><%= link_to "設定", setting_path, html_options = {method: :post} %></li>
+          <div class="menu">
+            <%= image_tag 'icon_menu.png', size: "55x55", id: "menutab"%>
           </div>
-          <div class="cart-inside">
-            <li class="menu-select"><%= link_to "カートのなか", "#" %></li>
+          <ul class="menu-list", id="menu-list"> 
+            <div class="logout">
+              <li class="menu-selct"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            </div>
+            <div class="mypage">
+              <li class="menu-select"><%= link_to "設定", setting_path, html_options = {method: :post} %></li>
+            </div>
+            <div class="cart-inside">
+              <li class="menu-select"></li>
+            </div>
+          </ul>
+        <% else %>
+          <div class="user_btn">
+            <%= link_to "新規登録", new_user_path%>
           </div>
-        </ul>
-      <% else %>
-        <div class="user_btn">
-          <%= link_to "新規登録", new_user_path%>
-        </div>
-        <div class="user_btn">
-          <%= link_to "ログイン",new_user_session_path %>
-        </div>
-      <% end %> 
+          <div class="user_btn">
+            <%= link_to "ログイン",new_user_session_path %>
+          </div>
+        <% end %> 
+      </div>
     </div>
-  </div>
     <%= yield %>
+    <div class= "footer"></div>
   </body>
 </html>

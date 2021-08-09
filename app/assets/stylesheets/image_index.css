@@ -46,3 +46,11 @@
 .user_info_box a{
   text-decoration: none;
 }
+.cart-inside{
+
+  width: 90px;
+  height: 90px;
+}
+.cart-icon{
+  border: 1px solid green;
+}

@@ -7,9 +7,11 @@ class User < ApplicationRecord
   validates :firstname, presence: true
   validates :lastname, presence: true
 
+  has_one_attached :icon
+
   has_many :images
   has_many :sns_credentials
-  has_one_attached :icon
+  has_many :orders
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
