@@ -1,25 +1,53 @@
 注文画面
 
 <%= form_with model:@order_mailing, url: orders_path, class:"order-form", local: true do |f| %>
-  <%= f.label :postal_code, "郵便番号" %>
-  <%= f.text_field :postal_code %><br />
-
-  <%= f.label :prefecture_id, "都道府県" %>
-  <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, { class:"prefecture-select" })%><br />
-
-  <%= f.label :city, "市区町村" %>
-  <%= f.text_field :city %><br />
-
-  <%= f.label :address, "番地" %>
-  <%= f.text_field :address %><br />
-
-  <%= f.label :building, "建物名" %>
-  <%= f.text_field :building %><br />
-
-  <%= f.label :tel, "電話番号" %>
-  <%= f.text_field :tel %><br />
-
-  <%= f.submit "購入", class:"button" %>
+  <div class="card-data">
+    <div class="card-num">
+      <%= f.label :number,"カード番号 　　：" %>
+      <%= f.text_field :price, placeholder: "カード番号（半角数字）", maxlength:"16", class:"cardnum-box" %>
+    </div>
+    <div class="expiration">
+      <p>有効期限 　　　：</p>
+      <%= f.text_field :exp_manth, placeholder:"ex)3", maxlength:"2", class:"exp-box" %>
+      <p>月</p>
+      <%= f.text_field :exp_year, placeholder:"ex)23", maxlength:"2", class:"exp-box" %>
+      <p>年</p>
+    </div>
+    <div class="cvc">
+      <%= f.label :cvc, "CVC　　　　　：" %>
+      <%= f.text_field :cvc, placeholder:"3.4桁の番号", maxlength:"4", class:"cvc-box" %>
+      <p>※カード背面の4桁もしくは3桁の番号です</p>
+    </div>
+  </div>
+  <div class="mailing-data">
+    <div class="postal_code">
+      <%= f.label :postal_code, "郵便番号　　　：" %>
+      <%= f.text_field :postal_code, placeholder:"ex)000-0000", class:"postal_code-box" %>
+    </div>
+    <div class="prefecture">
+      <%= f.label :prefecture_id, "都道府県　　　：" %>
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, { class:"prefecture-select" })%><br />
+    </div>
+    <div class="city">
+      <%= f.label :city, "市区町村　　　：" %>
+      <%= f.text_field :city, placeholder:"ex)〇〇市 ", class:"city-box" %>
+    </div>
+    <div class="address">
+      <%= f.label :address, "番地　　　　　：" %>
+      <%= f.text_field :address, placeholder:"ex)〇〇1-2-3", class:"address-box" %><br />
+    </div>
+    <div class="building">
+      <%= f.label :building, "建物名（任意）：" %>
+      <%= f.text_field :building, placeholder:"ex)〇〇マンション101号室", class:"builing-box" %>
+    </div>
+    <div class="tel">
+      <%= f.label :tel, "電話番号　　　：" %>
+      <%= f.text_field :tel, placeholder:"ex) 0901234123", class:"tel-box" %>
+    </div>
+  </div>
+  <div class="submit-button">
+      <%= f.submit "購入", class:"mailing-button" %>
+  </div>
 <% end %>
 
 

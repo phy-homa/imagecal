@@ -1,0 +1,51 @@
+.card-data,
+.mailing-data{
+  display: block;
+  margin: 20px;
+  background-color: khaki ;
+  padding: 20px 200px;
+}
+.card-num,
+.expiration{
+  margin-bottom: 20px;
+}
+.cardnum-box{
+  width: 200px;
+}
+.expiration{
+  display: flex;
+}
+.exp-box{
+  width: 50px;
+}
+.cvc-box{
+  width: 100px;
+}
+.cvc p{
+  font-size: 12px;
+}
+.postal_code,
+.prefecture,
+.city,
+.address,
+.building{
+  margin-bottom: 20px;
+}
+.postal_code-box{
+  width: 140px
+}
+.address-box{
+  width: 500px;
+}
+.submit-button{
+  width: 10%;
+  margin: 0 auto;
+  
+}
+.mailing-button{
+  border: 3px solid khaki;
+  height: 40px;
+  width: 80px;
+  background-color: white;
+  margin-bottom: 10px;
+}
