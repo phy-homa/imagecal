@@ -10,7 +10,7 @@ class Image < ApplicationRecord
   has_many :tags, through: :image_tag_relations
   has_many :line_items
   has_many :carts, through: :line_items
-  has_many :calendar, through: :image_orders
+  has_many :calendar, through: :line_items
 
 
 

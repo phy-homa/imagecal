@@ -40,7 +40,7 @@
 - has_many :tags, through: :image_tag_relations
 - has_many :line_items
 - has_many :carts, through: :line_items
-- has_many :calendar, through: :image_orders
+- has_many :calendar, through: ：line_items
 
 
 ## Tagsテーブル
@@ -74,7 +74,6 @@
 - belongs_to :image
 - belongs_to :order
 - belongs_to :cart
-- belongs_to :calendar
 
 
 ## Ordersテーブル
@@ -87,7 +86,7 @@
 - has_many :image_orders
 - has_many :images, through: :image_orders
 - has_one :mailing
-- has_one :calendar
+- belongs_to :calendar
 
 ## Mailingsテーブル
 | Column        | Type       | Options                        |
@@ -111,6 +110,7 @@
 ### Associations
 - belongs_to :image
 - belongs_to :cart
+- belongs_to :calendar
 
 ## cartsテーブル
 
@@ -127,7 +127,7 @@
 | cart     | references | null: false, foreign_key: true |
 
 ### Associations
-- belongs_to :image_order
-- belongs_to :cart, through: :image_order
-- has_many :images, through: :image_order
-- belongs_to :order
+- belongs_to :line_item
+- belongs_to :cart, through: :line_item
+- has_many :images, through: :line_item
+- has_one :order

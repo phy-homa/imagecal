@@ -3,5 +3,5 @@ class Order < ApplicationRecord
   has_many :image_orders
   has_many :images, through: :image_orders
   has_one :mailing
-  has_one :calendar
+  belongs_to :calendar
 end

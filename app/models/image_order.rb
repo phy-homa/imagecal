@@ -2,7 +2,6 @@ class ImageOrder < ApplicationRecord
   belongs_to :image
   belongs_to :order
   belongs_to :cart
-  belongs_to :calendar
 
   def self.create_images(order, line_items)
 

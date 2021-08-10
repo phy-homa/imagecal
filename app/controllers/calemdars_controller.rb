@@ -1,0 +1,2 @@
+class CalemdarsController < ApplicationController
+end
