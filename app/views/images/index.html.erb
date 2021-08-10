@@ -4,7 +4,6 @@
     <div class="app_info">
       アプリ概要
     </div>
-    <%= link_to "投稿", new_image_path, class:"image_post"%>
   <h1>新着順</h1>
   <div class="picture_posts">
     <% @images.each do |image| %>
@@ -23,6 +22,7 @@
   </div>
   <div class="cart-inside">
     <% if user_signed_in? %>
+      <%= link_to "投稿", new_image_path, class:"image_post"%>
       <% unless @cart.nil? %>
         <%= link_to (image_tag 'icon_cart.png', class:"cart-icon"), cart_path(@cart.id) %>
       <% end %>

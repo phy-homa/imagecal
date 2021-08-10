@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @images = Image.includes(:user).order(created_at: :desc)

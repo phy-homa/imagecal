@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @order_mailing = OrderMailing.new
     @cart = Cart.find_by(id: session[:cart_id])
-
-
   end
 
   def create

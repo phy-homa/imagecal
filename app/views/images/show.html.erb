@@ -3,4 +3,6 @@
 <%= @image.user.nickname %>
 <%= @image.comment%>
 
-<%= link_to 'カートに入れる', add_item_path(image_id: @image.id), html_options = {method: :post} %>
+<% if user_signed_in? %>
+  <%= link_to 'カートに入れる', add_item_path(image_id: @image.id), html_options = {method: :post} %>
+<% end %>

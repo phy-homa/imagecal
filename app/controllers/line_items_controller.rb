@@ -1,4 +1,6 @@
 class LineItemsController < ApplicationController
+  before_action :authenticate_user!, only: :destroy
+
   def destroy
     @line_items = current_cart.line_items
     @line_item = LineItem.find(params[:id])
