@@ -20,12 +20,18 @@
       </div>
     <% end %>
   </div>
-  <div class="cart-inside">
-    <% if user_signed_in? %>
-      <%= link_to "投稿", new_image_path, class:"image_post"%>
-      <% unless @cart.nil? %>
-        <%= link_to (image_tag 'icon_cart.png', class:"cart-icon"), cart_path(@cart.id) %>
-      <% end %>
+  <% if user_signed_in? %>
+      <div class="bottom-menu">
+        <div class="image-post-link">
+          <%= link_to (image_tag 'icon_post.png', class:"post-icon"), new_image_path, class:"image_post"%>
+          <p>投稿する</p>
+        </div>
+        <% unless @cart.nil? %>
+          <div class="cart-inside">
+            <%= link_to (image_tag 'icon_cart.png', class:"cart-icon"), cart_path(@cart.id) %>
+            <p>カートを見る</p>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  </div>
 </div>

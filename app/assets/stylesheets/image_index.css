@@ -1,7 +1,7 @@
 
 /*ヘッダー・フッダー以外のメイン*/
 .main{
-  height: calc(100vh - 100px - 50px);
+  height: calc(100vh - 100px - 30px);
   background-color: white;
   overflow: scroll;
 }
@@ -46,11 +46,33 @@
 .user_info_box a{
   text-decoration: none;
 }
-.cart-inside{
-
-  width: 90px;
+.bottom-menu{
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
   height: 90px;
+  width: 200px;
+  background-color: khaki;
+  padding: 0 20px;
 }
+.image-post-link,
+.cart-inside{
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  background-color: white;
+  border-radius:10px;
+  font-size: 12px;
+  color: darkgreen;
+}
+.post-icon{
+  width: 50px;
+  height: 50px;
+}
+
 .cart-icon{
-  border: 1px solid green;
+  height: 50px;
+  width: 50px;
 }
