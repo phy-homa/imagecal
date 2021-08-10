@@ -8,8 +8,10 @@
     <%= "##{tag.name}" %>
   <% end%>
   <%= line_item.image.season.name%>
+  <%= link_to "削除", line_item_path(line_item.id), method: :delete %>
 </div>
 <% end %>
 
 <%= link_to "トップに戻る", root_path%>
 <%= link_to "購入へ", new_order_path %>
+<%= link_to "カートの中を空にする", cart_path(@current_cart.id), method: :delete %>
