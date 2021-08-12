@@ -34,12 +34,13 @@
 
 ### Associations
 - belongs_to :user
-- has_many :orders, through: :image_orders
 - has_many :image_orders
-- has_many :tags, through: :image_tag_relations
+- has_many :orders, through: :image_orders
 - has_many :image_tag_relations
-- has_many :carts, through: :line_items
+- has_many :tags, through: :image_tag_relations
 - has_many :line_items
+- has_many :carts, through: :line_items
+- has_many :calendar, through: ：line_items
 
 
 ## Tagsテーブル
@@ -48,8 +49,8 @@
 | name   | string | null: false, uniqueness: true |
 
 ### Associations
-- has_many :images, through: :image_tag_relations
 - has_many :image_tag_relations
+- has_many :images, through: :image_tag_relations
 
 
 ## Image_tag_relationsテーブル
@@ -67,10 +68,12 @@
 | ------ | ---------- | ------------------------------ |
 | image  | references | null: false, foreign_key: true |
 | order  | references | null: false, foreign_key: true |
+| cart   | references | null: false, foreign_key: true |
 
 ### Associations
 - belongs_to :image
 - belongs_to :order
+- belongs_to :cart
 
 
 ## Ordersテーブル
@@ -80,9 +83,10 @@
 
 ### Associations
 - belongs_to :user
-- has_many :images, through: :image_orders
 - has_many :image_orders
+- has_many :images, through: :image_orders
 - has_one :mailing
+- belongs_to :calendar
 
 ## Mailingsテーブル
 | Column        | Type       | Options                        |
@@ -106,9 +110,24 @@
 ### Associations
 - belongs_to :image
 - belongs_to :cart
+- belongs_to :calendar
 
 ## cartsテーブル
 
 ### Associations
-- has_many :images, through: :line_items
 - has_many :line_items, dependent: :destroy
+- has_many :images, through: :line_items
+- belongs_to :calender, through: :line_item
+
+## calendarsテーブル
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| month    | integer    | null: false                    |
+| image    | references | null: false, foreign_key: true |
+| cart     | references | null: false, foreign_key: true |
+
+### Associations
+- belongs_to :line_item
+- belongs_to :cart, through: :line_item
+- has_many :images, through: :line_item
+- has_one :order

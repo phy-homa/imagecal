@@ -1,0 +1,2 @@
+class ImageCalendar < ApplicationRecord
+end

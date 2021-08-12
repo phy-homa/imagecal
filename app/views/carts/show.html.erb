@@ -15,3 +15,7 @@
 <%= link_to "トップに戻る", root_path%>
 <%= link_to "購入へ", new_order_path %>
 <%= link_to "カートの中を空にする", cart_path(@current_cart.id), method: :delete %>
+
+<% if @current_cart.images.length == 12%>
+  <%= link_to "プレビューページ", new_calendar_path %>
+<% end %>

@@ -1,0 +1,24 @@
+.make-calendar{
+  height: 500px;
+  width: 4500px;
+  background-color: khaki;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.calendar{
+  width: 330px;
+  height: 440px;
+  border: 1px solid darkgreen;
+}
+.calendar-picture{
+  background-color: white;
+  width: 330px;
+  height: 220px;
+  border: 1px solid darkgreen;
+}
+
+.picture-image{
+  width: 330px;
+  height: 220px;
+}

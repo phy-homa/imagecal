@@ -1,0 +1,14 @@
+<div class="main">
+  pe-ge
+  
+  <div class="make-calendar">
+    <% @images.each do |image| %>
+      <div class="calendar-picture">
+        <%= image_tag image.picture, class:"picture-image" %>
+      </div>
+    <% end %>
+  </div>
+  <% form_with model: @calendar, local: true do |f|%>
+    <% f.hidden_field :month, value => 1 %>
+    <%%>
+</div>

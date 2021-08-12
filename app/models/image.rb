@@ -10,6 +10,9 @@ class Image < ApplicationRecord
   has_many :tags, through: :image_tag_relations
   has_many :line_items
   has_many :carts, through: :line_items
+  has_many :image_calendars
+  has_many :calendars, through: :image_calendars
+
 
 
   extend ActiveHash::Associations::ActiveRecordExtensions
