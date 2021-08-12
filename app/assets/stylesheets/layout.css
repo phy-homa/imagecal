@@ -92,7 +92,11 @@
 .logout{
   border-bottom: 1px solid #00552e;
 }
-
+.main{
+  height: calc(100vh - 100px - 30px);
+  background-color: white;
+  overflow: scroll;
+}
 /*フッダー*/
 .footer{
   height: 30px;
