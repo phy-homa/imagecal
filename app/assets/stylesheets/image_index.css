@@ -10,6 +10,7 @@
 .picture_posts{
   display: flex;
   justify-content: right;
+  overflow: scroll;
 }
 
 /*各投稿イラスト*/
