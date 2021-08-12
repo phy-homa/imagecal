@@ -1,0 +1,33 @@
+<div class="calendar">
+  <div class="calendar-picture">
+    <%= image_tag @picture1.picture, class:"picture-box" %>
+  </div>
+  <div class="month-select">
+    <%= form_with model: @calendar, url: calendars_path, id:"form-box",  local: true do |f|%>
+      <%= f.hidden_field :image_id, value:@picture1.id %>
+      <%= f.label :month, "　１月" %>
+      <%= f.radio_button :month, 1, class:"radio-btn" %>
+      <%= f.label :month, "　２月" %>
+      <%= f.radio_button :month, 2, class:"radio-btn" %>
+      <%= f.label :month, "　３月" %>
+      <%= f.radio_button :month, 3, class:"radio-btn" %>
+      <%= f.label :month, "　４月" %>
+      <%= f.radio_button :month, 4, class:"radio-btn" %><br />
+      <%= f.label :month, "　５月" %>
+      <%= f.radio_button :month, 5, class:"radio-btn"%>
+      <%= f.label :month, "　６月" %>
+      <%= f.radio_button :month, 6, class:"radio-btn" %>
+      <%= f.label :month, "　７月" %>
+      <%= f.radio_button :month, 7, class:"radio-btn" %>
+      <%= f.label :month, "　８月" %>
+      <%= f.radio_button :month, 8, class:"radio-btn" %><br />
+      <%= f.label :month, "　９月" %>
+      <%= f.radio_button :month, 9, class:"radio-btn" %>
+      <%= f.label :month, "１０月" %>
+      <%= f.radio_button :month, 10, class:"radio-btn" %>
+      <%= f.label :month, "１１月" %>
+      <%= f.radio_button :month, 11, class:"radio-btn" %>
+      <%= f.label :month, "１２月" %>
+      <%= f.radio_button :month, 12, class:"radio-btn" %>
+  </div>
+</div>

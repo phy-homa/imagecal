@@ -1,33 +1,28 @@
 class CalendarsController < ApplicationController
   def new
     @images = current_cart.images
-    @picture1 = @images[0]
-    @picture2 = @images[1]
-    @picture3 = @images[2]
-    @picture4 = @images[3]
-    @picture5 = @images[4]
-    @picture6 = @images[5]
-    @picture7 = @images[6]
-    @picture8 = @images[7]
-    @picture9 = @images[8]
-    @picture10 = @images[9]
-    @picture11 = @images[10]
-    @picture12 = @images[11]
     @calendar = Calendar.new
   end
 
   def create
+    sleep(1)
     @images = current_cart.images
-
     @calendar = Calendar.new(calendar_params)
-    @calendar.save
-    ImageCalendar.save(@calendar)
+    if @calendar.valid?
+      @calendar.save
+      ImageCalendar.save(@calendar, @images)
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
   def calendar_params
-    @image_id = params[:image_id]
-    params.require(:calendar).permit(:month, :image_id)
-    
+    params.require(:calendar).permit(
+      :month1_id, :img1, :month2_id, :img2, :month3_id, :img3, :month4_id, :img4,
+      :month5_id, :img5, :month6_id, :img6, :month7_id, :img7, :month8_id, :img8,
+      :month9_id, :img9, :month10_id, :img10, :month11_id, :img11, :month12_id, :img12
+    )
   end
 end
