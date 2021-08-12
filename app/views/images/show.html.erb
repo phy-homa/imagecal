@@ -5,7 +5,7 @@
 
 <% if user_signed_in? %>
   <%= link_to 'カートに入れる', add_item_path(image_id: @image.id), html_options = {method: :post} %>
-  <% if current_user.id == image.user_id%>
-    <%= link_to 'イラストを削除'%>
+  <% if current_user.id == @image.user_id%>
+    <%= link_to 'イラストを削除', image_path(@image.id), method: :delete%>
   <% end %>
 <% end %>

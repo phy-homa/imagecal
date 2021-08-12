@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   }
 
   root to: "images#index"
-  resources :images, only: [:index, :new, :create, :show]
+  resources :images
   resources :users, only: [:new, :show]
   post '/setting' => 'users#setting'
   resources :carts, only:[:show, :destroy]
