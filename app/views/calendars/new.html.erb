@@ -1,14 +1,41 @@
 <div class="main">
   pe-ge
-  
   <div class="make-calendar">
-    <% @images.each do |image| %>
+    <div class="calendar">
       <div class="calendar-picture">
-        <%= image_tag image.picture, class:"picture-image" %>
+        <%= image_tag @picture1.picture %>
+        <%= @picture1.id %>
       </div>
-    <% end %>
+      <div>
+        <%= form_with model: @calendar, url: calendars_path, id:"form-box",  local: true do |f|%>
+          <%= f.hidden_field :image_id, value:@picture1.id %>
+          <%= f.label :month, "1がつ" %>
+          <%= f.radio_button :month, 1 %>
+          <%= f.label :month, "2がつ" %>
+          <%= f.radio_button :month, 2 %>
+          <%= f.label :month, "3がつ" %>
+          <%= f.radio_button :month, 3 %>
+          <%= f.label :month, "4がつ" %>
+          <%= f.radio_button :month, 4 %>
+          <%= f.label :month, "5がつ" %>
+          <%= f.radio_button :month, 5%>
+          <%= f.label :month, "6がつ" %>
+          <%= f.radio_button :month, 6 %>
+          <%= f.label :month, "7がつ" %>
+          <%= f.radio_button :month, 7 %>
+          <%= f.label :month, "8がつ" %>
+          <%= f.radio_button :month, 8 %>
+          <%= f.label :month, "9がつ" %>
+          <%= f.radio_button :month, 9 %>
+          <%= f.label :month, "10がつ" %>
+          <%= f.radio_button :month, 10 %>
+          <%= f.label :month, "11がつ" %>
+          <%= f.radio_button :month, 11 %>
+          <%= f.label :month, "12がつ" %>
+          <%= f.radio_button :month, 12 %>
+          <%= f.submit "PICTURE1決定" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <% form_with model: @calendar, local: true do |f|%>
-    <% f.hidden_field :month, value => 1 %>
-    <%%>
 </div>

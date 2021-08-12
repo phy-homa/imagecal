@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   }
 
   root to: "images#index"
-  resources :images
+  resources :images, only: [:index, :new, :create, :show, :destroy]
   resources :users, only: [:new, :show]
   post '/setting' => 'users#setting'
   resources :carts, only:[:show, :destroy]
   post '/add_item' => 'carts#add_item'
   resources :orders, only: [:new, :create]
   resources :line_items, only: :destroy
-  resources :calendars, only: :new
+  resources :calendars, only: [:new, :create]
 end

@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_08_10_132844) do
 
   create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "month", null: false
+    t.integer "image_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

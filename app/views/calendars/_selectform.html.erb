@@ -1,0 +1,63 @@
+<div class="pict-select">
+  <div class="Junuary">
+    <h1>1月</h1>
+      <%= form_with model: @calendar, url: calendars_path, id:"form-box",  local: true do |f|%>
+        <% f.hidden_field :month => 1 %>
+        <%= f.label :image, "image1" %>
+        <%= f.radio_button :image, :@picture1 %>
+        <%= f.label :image, "image2" %>
+        <%= f.radio_button :image, :@picture2.id %>
+        <%= f.label :image, "image3" %>
+        <%= f.radio_button :image, :@picture3.id %>
+        <%= f.label :image, "image4" %>
+        <%= f.radio_button :image, :@picture4.id %>
+        <%= f.label :image, "image5" %>
+        <%= f.radio_button :image, :@picture5.id %>
+        <%= f.label :image, "image6" %>
+        <%= f.radio_button :image, :@picture6.id %>
+        <%= f.label :image, "image7" %>
+        <%= f.radio_button :image, :@picture7.id %>
+        <%= f.label :image, "image8" %>
+        <%= f.radio_button :image, :@picture8.id %>
+        <%= f.label :image, "image9" %>
+        <%= f.radio_button :image, :@picuture9.id %>
+        <%= f.label :image, "image10" %>
+        <%= f.radio_button :image, :@picture10.id %>
+        <%= f.label :image, "image11" %>
+        <%= f.radio_button :image, :@picture11.id %>
+        <%= f.label :image, "image12" %>
+        <%= f.radio_button :image, :@picture12.id %>
+        <%= f.submit "1月決定" %>
+      <% end %>
+  </div>
+  <div class="February">
+    <h1>2月</h1>
+      <%= form_with model: @calendar, url: new_calendar_path, id:"form-box",  local: true do |f|%>
+        <% f.hidden_field :month => 1 %>
+        <%= f.label :image, "image1" %>
+        <%= f.radio_button :image, :@picuture1 %>
+        <%= f.label :image, "image2" %>
+        <%= f.radio_button :image, :@image2 %>
+        <%= f.label :image, "image3" %>
+        <%= f.radio_button :image, :@image3 %>
+        <%= f.label :image, "image4" %>
+        <%= f.radio_button :image, :@image4 %>
+        <%= f.label :image, "image5" %>
+        <%= f.radio_button :image, :@image5 %>
+        <%= f.label :image, "image6" %>
+        <%= f.radio_button :image, :@image6 %>
+        <%= f.label :image, "image7" %>
+        <%= f.radio_button :image, :@image7 %>
+        <%= f.label :image, "image8" %>
+        <%= f.radio_button :image, :@image8 %>
+        <%= f.label :image, "image9" %>
+        <%= f.radio_button :image, :@image9 %>
+        <%= f.label :image, "image10" %>
+        <%= f.radio_button :image, :@image10 %>
+        <%= f.label :image, "image11" %>
+        <%= f.radio_button :image, :@image11 %>
+        <%= f.label :image, "image12" %>
+        <%= f.radio_button :image, :@image12 %>
+      <% end %>
+  </div>
+</div>

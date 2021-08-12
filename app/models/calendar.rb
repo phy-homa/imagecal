@@ -1,5 +1,5 @@
 class Calendar < ApplicationRecord
   has_many :image_calendars
-  has_many :image, through: :calendar
+  has_many :images, through: :image_calendars
   has_one :order
 end
