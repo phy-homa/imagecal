@@ -17,6 +17,10 @@ class CalendarsController < ApplicationController
     end
   end
 
+  def show
+    @calendar = Calendar.find(:id)
+  end
+
   private
   def calendar_params
     params.require(:calendar).permit(

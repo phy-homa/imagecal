@@ -1,18 +1,24 @@
+.make-calendar-title{
+  font-size: 24px;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+}
 .make-calendar{
-  height: 500px;
+  height: 340px;
   width: 5000px;
   background-color: khaki;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: 50px;
 }
 .calendar-picture{
   width: 390px;
-  height: 400px;
+  height: 260px;
   border: 1px solid darkgreen;
   background-color: white;
 }
-
 .picture-box{
   width: 390px;
   height: 260px;
@@ -23,7 +29,38 @@
   text-align: center;
   padding: 10px;
 }
-.radio-btn{
-  margin-right: 20px;
+.month-select{
+  height: 60px;
+  width: 5000px;
+  background-color: white;
+  display: flex;
+  overflow: scroll;
+  justify-content: space-around;
+  align-items: center;
+}
+.pict{
+  width: 390px;
+  height: 40px;
+  background-color: cornsilk;
+}
+.month-label{
+  margin: 0 15px 0 70px;
+  font-size: 22px;
+}
+.month_select_box{
+  width: 100px;
+  height: 25px;
+}
+.send-btn-box{
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+}
+.send-btn{
+  width: 120px;
+  height: 50px;
+  border: 3px solid darkgreen;
+  color: darkgreen;
+  background-color: #F0FFF0;
 }
 

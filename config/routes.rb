@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   post '/add_item' => 'carts#add_item'
   resources :orders, only: [:new, :create]
   resources :line_items, only: :destroy
-  resources :calendars, only: [:new, :create]
+  resources :calendars, only: [:new, :create, :show]
 end
