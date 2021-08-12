@@ -11,14 +11,14 @@ class CalendarsController < ApplicationController
     if @calendar.valid?
       @calendar.save
       ImageCalendar.save(@calendar, @images)
-      redirect_to root_path
+      redirect_to calendar_path(@calendar.id)
     else
       render :new
     end
   end
 
   def show
-    @calendar = Calendar.find(:id)
+    @calendar = Calendar.find(params[:id])
   end
 
   private
