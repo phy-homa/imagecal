@@ -1,17 +1,19 @@
-<h1>ユーザー詳細</h1>
+<div class="main">
+  <h1>ユーザー詳細</h1>
 
-<%= "ユーザー名：#{@user.nickname}" %>
-ユーザー紹介
-ユーザーアイコン
-<h1>投稿イラスト一覧</h1>
-<div class="post_pictures">
-<% @images.each do |image| %>
-  <div class="picture_box">
-    <%= link_to (image_tag image.picture.variant(resize: '330x220')), image_path(image.id)%>
-    <%= image.season.name%>
-    <% image.tags.each do |tag|%>
-      <%= "##{tag.name}"%>
+  <%= "ユーザー名：#{@user.nickname}" %>
+  ユーザー紹介
+  ユーザーアイコン
+  <h1>投稿イラスト一覧</h1>
+  <div class="post_pictures">
+    <% @images.each do |image| %>
+      <div class="picture_box">
+        <%= link_to (image_tag image.picture.variant(resize: '330x220')), image_path(image.id)%>
+        <%= image.season.name%>
+        <% image.tags.each do |tag|%>
+          <%= "##{tag.name}"%>
+        <% end %>
+      </div>
     <% end %>
   </div>
-<% end %>
 </div>

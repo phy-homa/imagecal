@@ -1,6 +1,7 @@
-
-<div class="ユーザー認証">
-  <%= link_to "Facebook", user_facebook_omniauth_authorize_path, method: :post %>
-  <%= link_to "Google", user_google_oauth2_omniauth_authorize_path, method: :post %>
-  <%= link_to "ユーザー認証しない", new_user_registration_path%>
+<div class="main">
+  <div class="ユーザー認証">
+    <%= link_to "Facebook", user_facebook_omniauth_authorize_path, method: :post %>
+    <%= link_to "Google", user_google_oauth2_omniauth_authorize_path, method: :post %>
+    <%= link_to "ユーザー認証しない", new_user_registration_path%>
+  </div>
 </div>

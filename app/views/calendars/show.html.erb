@@ -1,5 +1,5 @@
 <div class="main">
-  <p class="make-calendar-title">＜カレンダープレビュー＞</p>
+  <p class="make-calendar-title">＜カレンダープレビュー＞　　カレンダー一律：1000円（税抜き）</p>
   <div class="preview">
     <% @images.each do |image| %>
       <% if image.id == @image_month1.img %>
@@ -146,6 +146,7 @@
       <% end %>
     <% end %>
   </div>
+  <%= link_to "購入へ", new_order_path %>
 </div>
 
 
