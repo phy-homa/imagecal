@@ -33,7 +33,6 @@ class CalendarsController < ApplicationController
     @image_month11 = @image_months[10]
     @image_month12 = @image_months[11]
     @images = @calendar.images
-
   end
 
   private

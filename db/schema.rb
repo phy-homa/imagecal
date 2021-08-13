@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_13_020402) do
+ActiveRecord::Schema.define(version: 2021_08_13_065823) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -85,17 +85,6 @@ ActiveRecord::Schema.define(version: 2021_08_13_020402) do
     t.index ["calendar_id"], name: "index_image_months_on_calendar_id"
   end
 
-  create_table "image_orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "image_id"
-    t.bigint "order_id"
-    t.bigint "cart_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["cart_id"], name: "index_image_orders_on_cart_id"
-    t.index ["image_id"], name: "index_image_orders_on_image_id"
-    t.index ["order_id"], name: "index_image_orders_on_order_id"
-  end
-
   create_table "image_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "image_id"
     t.bigint "tag_id"
@@ -140,6 +129,8 @@ ActiveRecord::Schema.define(version: 2021_08_13_020402) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "calendar_id", null: false
+    t.index ["calendar_id"], name: "index_orders_on_calendar_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -176,9 +167,6 @@ ActiveRecord::Schema.define(version: 2021_08_13_020402) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "image_months", "calendars"
-  add_foreign_key "image_orders", "carts"
-  add_foreign_key "image_orders", "images"
-  add_foreign_key "image_orders", "orders"
   add_foreign_key "image_tag_relations", "images"
   add_foreign_key "image_tag_relations", "tags"
   add_foreign_key "images", "users"

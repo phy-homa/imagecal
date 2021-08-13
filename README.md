@@ -34,8 +34,6 @@
 
 ### Associations
 - belongs_to :user
-- has_many :image_orders
-- has_many :orders, through: :image_orders, dependent: :destroy
 - has_many :image_tag_relations
 - has_many :tags, through: :image_tag_relations, dependent: :destroy
 - has_many :line_items
@@ -64,18 +62,6 @@
 - belongs_to :image
 - belongs_to :tag
 
-## Image_ordersテーブル
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| image  | references | null: false, foreign_key: true |
-| order  | references | null: false, foreign_key: true |
-| cart   | references | null: false, foreign_key: true |
-
-### Associations
-- belongs_to :image
-- belongs_to :order
-- belongs_to :cart
-
 
 ## Ordersテーブル
 | Column | Type       | Options                        |
@@ -84,8 +70,6 @@
 
 ### Associations
 - belongs_to :user
-- has_many :image_orders
-- has_many :images, through: :image_orders
 - has_one :mailing
 - belongs_to :calendar
 
@@ -117,8 +101,6 @@
 ### Associations
 - has_many :line_items, dependent: :destroy
 - has_many :images, through: :line_items
-- belongs_to :image_order
-- has_one :order, through: :image_order
 
 ## calendarsテーブル
 | Column  | Type    | Options     |
