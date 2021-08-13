@@ -6,8 +6,7 @@ Rails.application.routes.draw do
 
   root to: "images#index"
   resources :images, only: [:index, :new, :create, :show, :destroy]
-  resources :users, only: [:new, :show]
-  post '/setting' => 'users#setting'
+  resources :users, only: [:new, :show, :index]
   resources :carts, only:[:show, :destroy]
   post '/add_item' => 'carts#add_item'
   resources :line_items, only: :destroy

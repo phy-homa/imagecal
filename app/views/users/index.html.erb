@@ -8,7 +8,7 @@
       <%= "email:#{@user.email}" %>
     </div>
     <div class="setting-icon">
-      <%= image_tag @user.icon.variant(resize: '280x280') %>
+      <%= image_tag @user.icon.variant(resize: '280x280') unless @user.icon.blank? %>
     </div>
     <div class="setting-introduce">
       <h1>紹介:</h1>

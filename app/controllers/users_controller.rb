@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @images = @user.images.all
   end
 
-  def setting
+  def index
     @user = current_user
   end
 end
