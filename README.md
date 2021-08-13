@@ -152,7 +152,7 @@
 - has_many :image_calendars
 - has_many :images, through: :image_calendars
 - has_one :order
-- has_one :image_month
+- has_many :image_month
 
 ## image_calendarsテーブル
 | Column   | Type       | Options                        |

@@ -64,3 +64,35 @@
   background-color: #F0FFF0;
 }
 
+/* calendar#show */
+.preview{
+  height: 500px;
+  width: 4800px;
+  background-color: khaki;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+.preview-calendar{
+  width: 330px;
+  height: 441px;
+  border: 1px solid darkgreen;
+  display: block;
+}
+.preview-picture{
+  width: 330px;
+  height: 220px;
+  margin-bottom: 1px;
+}
+.preview-picture-box{
+  width: 330px;
+  height: 220px;
+  background-color: white;
+  border-bottom: 1px solid darkgreen;
+}
+.preview-schedule{
+  width: 330px;
+  height: 220px;
+  background-color: white;
+}

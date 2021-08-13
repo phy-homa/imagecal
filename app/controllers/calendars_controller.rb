@@ -5,7 +5,6 @@ class CalendarsController < ApplicationController
   end
 
   def create
-    sleep(1)
     @images = current_cart.images
     @calendar = Calendar.new(calendar_params)
     if @calendar.valid?
@@ -20,6 +19,21 @@ class CalendarsController < ApplicationController
 
   def show
     @calendar = Calendar.find(params[:id])
+    @image_months = @calendar.image_month.all.order("month ASC")
+    @image_month1 = @image_months[0]
+    @image_month2 = @image_months[1]
+    @image_month3 = @image_months[2]
+    @image_month4 = @image_months[3]
+    @image_month5 = @image_months[4]
+    @image_month6 = @image_months[5]
+    @image_month7 = @image_months[6]
+    @image_month8 = @image_months[7]
+    @image_month9 = @image_months[8]
+    @image_month10 = @image_months[9]
+    @image_month11 = @image_months[10]
+    @image_month12 = @image_months[11]
+    @images = @calendar.images
+
   end
 
   private

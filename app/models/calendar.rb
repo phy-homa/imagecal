@@ -2,6 +2,7 @@ class Calendar < ApplicationRecord
   has_many :image_calendars
   has_many :images, through: :image_calendars
   has_one :order
+  has_many :image_month
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :month1

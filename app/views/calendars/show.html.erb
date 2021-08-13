@@ -1,2 +1,156 @@
-カレンダープレビュー
+<div class="main">
+  <p class="make-calendar-title">＜カレンダープレビュー＞</p>
+  <div class="preview">
+    <% @images.each do |image| %>
+      <% if image.id == @image_month1.img %>
+        <div class="preview-calendar">
+          <div class="preview-picture">
+            <%= image_tag image.picture, class:"preview-picture-box" %>
+          </div>
+          <div class="schedule">
+            <%= image_tag 'jan.png', class:"preview-schedule" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% @images.each do |image| %>
+      <% if image.id == @image_month2.img %>
+        <div class="preview-calendar">
+          <div class="preview-picture">
+            <%= image_tag image.picture, class:"preview-picture-box" %>
+          </div>
+          <div class="schedule">
+            <%= image_tag 'feb.png', class:"preview-schedule" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% @images.each do |image| %>
+      <% if image.id == @image_month3.img %>
+        <div class="preview-calendar">
+          <div class="preview-picture">
+            <%= image_tag image.picture, class:"preview-picture-box" %>
+          </div>
+          <div class="schedule">
+            <%= image_tag 'mar.png', class:"preview-schedule" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% @images.each do |image| %>
+      <% if image.id == @image_month4.img %>
+        <div class="preview-calendar">
+          <div class="preview-picture">
+            <%= image_tag image.picture, class:"preview-picture-box" %>
+          </div>
+          <div class="schedule">
+            <%= image_tag 'apr.png', class:"preview-schedule" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% @images.each do |image| %>
+      <% if image.id == @image_month5.img %>
+        <div class="preview-calendar">
+          <div class="preview-picture">
+            <%= image_tag image.picture, class:"preview-picture-box" %>
+          </div>
+          <div class="schedule">
+            <%= image_tag 'may.png', class:"preview-schedule" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% @images.each do |image| %>
+      <% if image.id == @image_month6.img %>
+        <div class="preview-calendar">
+          <div class="preview-picture">
+            <%= image_tag image.picture, class:"preview-picture-box" %>
+          </div>
+          <div class="schedule">
+            <%= image_tag 'jun.png', class:"preview-schedule" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% @images.each do |image| %>
+      <% if image.id == @image_month7.img %>
+        <div class="preview-calendar">
+          <div class="preview-picture">
+            <%= image_tag image.picture, class:"preview-picture-box" %>
+          </div>
+          <div class="schedule">
+            <%= image_tag 'jul.png', class:"preview-schedule" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% @images.each do |image| %>
+      <% if image.id == @image_month8.img %>
+        <div class="preview-calendar">
+          <div class="preview-picture">
+            <%= image_tag image.picture, class:"preview-picture-box" %>
+          </div>
+          <div class="schedule">
+            <%= image_tag 'aug.png', class:"preview-schedule" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% @images.each do |image| %>
+      <% if image.id == @image_month9.img %>
+        <div class="preview-calendar">
+          <div class="preview-picture">
+            <%= image_tag image.picture, class:"preview-picture-box" %>
+          </div>
+          <div class="schedule">
+            <%= image_tag 'sep.png', class:"preview-schedule" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% @images.each do |image| %>
+      <% if image.id == @image_month10.img %>
+        <div class="preview-calendar">
+          <div class="preview-picture">
+            <%= image_tag image.picture, class:"preview-picture-box" %>
+          </div>
+          <div class="schedule">
+            <%= image_tag 'oct.png', class:"preview-schedule" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% @images.each do |image| %>
+      <% if image.id == @image_month11.img %>
+        <div class="preview-calendar">
+          <div class="preview-picture">
+            <%= image_tag image.picture, class:"preview-picture-box" %>
+          </div>
+          <div class="schedule">
+            <%= image_tag 'nov.png', class:"preview-schedule" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% @images.each do |image| %>
+      <% if image.id == @image_month12.img %>
+        <div class="preview-calendar">
+          <div class="preview-picture">
+            <%= image_tag image.picture, class:"preview-picture-box" %>
+          </div>
+          <div class="schedule">
+            <%= image_tag 'dec.png', class:"preview-schedule" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
 
