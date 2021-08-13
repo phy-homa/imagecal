@@ -35,11 +35,12 @@
 ### Associations
 - belongs_to :user
 - has_many :image_orders
-- has_many :orders, through: :image_orders
+- has_many :orders, through: :image_orders, dependent: :destroy
 - has_many :image_tag_relations
-- has_many :tags, through: :image_tag_relations
+- has_many :tags, through: :image_tag_relations, dependent: :destroy
 - has_many :line_items
 - has_many :carts, through: :line_items
+- has_many :image_calendars
 - has_many :calendar, through: ：line_items
 
 
@@ -110,24 +111,64 @@
 ### Associations
 - belongs_to :image
 - belongs_to :cart
-- belongs_to :calendar
 
 ## cartsテーブル
 
 ### Associations
 - has_many :line_items, dependent: :destroy
 - has_many :images, through: :line_items
-- belongs_to :calender, through: :line_item
+- belongs_to :image_order
+- belongs_to :order, through: :image_order
 
 ## calendarsテーブル
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| month    | integer    | null: false                    |
-| image    | references | null: false, foreign_key: true |
-| cart     | references | null: false, foreign_key: true |
+| Column  | Type    | Options     |
+| ------- | ------- | ----------- |
+| month1  | integer | null: false |
+| img1    | integer | null: false |
+| month2  | integer | null: false |
+| img2    | integer | null: false |
+| month3  | integer | null: false |
+| img3    | integer | null: false |
+| month4  | integer | null: false |
+| img4    | integer | null: false |
+| month5  | integer | null: false |
+| img5    | integer | null: false |
+| month6  | integer | null: false |
+| img6    | integer | null: false |
+| month7  | integer | null: false |
+| img7    | integer | null: false |
+| month8  | integer | null: false |
+| img8    | integer | null: false |
+| month9  | integer | null: false |
+| img9    | integer | null: false |
+| month10 | integer | null: false |
+| img10   | integer | null: false |
+| month11 | integer | null: false |
+| img11   | integer | null: false |
+| month12 | integer | null: false |
+| img12   | integer | null: false |
 
 ### Associations
-- belongs_to :line_item
-- belongs_to :cart, through: :line_item
-- has_many :images, through: :line_item
+- has_many :image_calendars
+- has_many :images, through: :image_calendars
 - has_one :order
+- has_one :image_month
+
+## image_calendarsテーブル
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| image    | references | null: false, foreign_key: true |
+| calendar | references | null: false, foreign_key: true |
+
+### Associations
+- belongs_to :image
+- belongs_to :calendar
+
+## image_month
+| Column | Type    | Options     |
+| ------ | ------- | ----------- |
+| month  | integer | null: false |
+| img    | integer | null: false |
+
+### Associations
+- belongs_to :calendar
