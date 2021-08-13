@@ -11,6 +11,7 @@ class CalendarsController < ApplicationController
     if @calendar.valid?
       @calendar.save
       ImageCalendar.save(@calendar, @images)
+      ImageMonth.save(@calendar)
       redirect_to calendar_path(@calendar.id)
     else
       render :new

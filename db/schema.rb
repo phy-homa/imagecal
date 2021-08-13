@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_10_132844) do
+ActiveRecord::Schema.define(version: 2021_08_13_020402) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -74,6 +74,15 @@ ActiveRecord::Schema.define(version: 2021_08_10_132844) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["calendar_id"], name: "index_image_calendars_on_calendar_id"
     t.index ["image_id"], name: "index_image_calendars_on_image_id"
+  end
+
+  create_table "image_months", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "month", null: false
+    t.integer "img", null: false
+    t.bigint "calendar_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["calendar_id"], name: "index_image_months_on_calendar_id"
   end
 
   create_table "image_orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -166,6 +175,7 @@ ActiveRecord::Schema.define(version: 2021_08_10_132844) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "image_months", "calendars"
   add_foreign_key "image_orders", "carts"
   add_foreign_key "image_orders", "images"
   add_foreign_key "image_orders", "orders"
