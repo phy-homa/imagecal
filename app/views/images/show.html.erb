@@ -1,13 +1,41 @@
-<h1>イラスト詳細ページ</h2>
+<p class="title">イラスト詳細ページ</p>
 <div class="main">
-  <%= image_tag @image.picture%>
-  <%= @image.user.nickname %>
-  <%= @image.comment%>
-
-  <% if user_signed_in? %>
-    <%= link_to 'カートに入れる', add_item_path(image_id: @image.id), html_options = {method: :post} %>
-    <% if current_user.id == @image.user_id%>
-      <%= link_to 'イラストを削除', image_path(@image.id), method: :delete%>
-    <% end %>
-  <% end %>
+  <div class="show">
+    <div class="picture-show">
+      <%= image_tag @image.picture, class:"show-picture"%>
+    </div>
+    <div class="picture-data">
+      <div class="show-user-data">
+        <div class="show-user-icon">
+        </div>
+        <div class="show-user-nickname">
+          <%= link_to @image.user.nickname, user_path(@image.user.id) %>
+        </div>
+      </div>
+      <p>＜コメント＞</p>
+      <div class="show-comment" >
+        <%= @image.comment%>
+      </div>
+      <div class="show-season">
+        <%= "＜イラストの季節：　　#{@image.season.name}＞" %>
+      </div>
+      <div class="show-tag">
+        <p>＜タグ＞</p>
+        <% @image.tags.each do |tag| %>
+          <%= tag.name %>
+        <% end %>
+      </div>
+      <div class="show-post">
+        <% if user_signed_in? %>
+          <div class="show-btn">
+            <%= link_to 'カートに入れる', add_item_path(image_id: @image.id), method: :post, class:"show-link"  %>
+          </div>
+            <div class="show-btn">
+              <% if current_user.id == @image.user_id%>
+                <%= link_to 'イラストを削除', image_path(@image.id), method: :delete, class:"show-link"%>
+              <% end %>
+            </div>
+        <% end %>
+    </div>
+  </div>
 </div>

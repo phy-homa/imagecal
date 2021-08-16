@@ -1,21 +1,23 @@
-カートの中身
+
 <div class="main">
-  <% @line_items.each do |line_item|%>
-    <div class="select-image">
-      <%= image_tag line_item.image.picture.variant(resize: '330x220') %>
-      <%= line_item.image.user.nickname %>
-      <% line_item.image.tags.each do |tag|%>
-        <%= "##{tag.name}" %>
-      <% end%>
-      <%= line_item.image.season.name%>
-      <%= link_to "削除", line_item_path(line_item.id), method: :delete %>
-    </div>
-  <% end %>
+  <p class="title">カートのなか</p>
+    <% @line_items.each do |line_item|%>
+      <div class="select-image">
+        <%= image_tag line_item.image.picture.variant(resize: '330x220') %>
+        <%= line_item.image.user.nickname %>
+        <% line_item.image.tags.each do |tag|%>
+          <%= "##{tag.name}" %>
+        <% end%>
+        <%= line_item.image.season.name%>
+        <%= link_to "削除", line_item_path(line_item.id), method: :delete %>
+      </div>
+    <% end %>
 
-  <%= link_to "トップに戻る", root_path%>
-  <%= link_to "カートの中を空にする", cart_path(@current_cart.id), method: :delete %>
+    <%= link_to "トップに戻る", root_path%>
+    <%= link_to "カートの中を空にする", cart_path(@current_cart.id), method: :delete %>
 
-  <% if @current_cart.images.length == 12%>
-    <%= link_to "プレビューページ", new_calendar_path %>
-  <% end %>
+    <% if @current_cart.images.length == 12%>
+      <%= link_to "プレビューページ", new_calendar_path %>
+    <% end %>
+  </div>
 </div>
