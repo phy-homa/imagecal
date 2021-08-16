@@ -15,7 +15,7 @@
           <div class="top-data">
             <div class="image-user">
               <%= link_to (image_tag image.user.icon, class:"usericon"), user_path(image.user.id) %>
-              <%= link_to image.user.nickname, user_path(image.user.id) %>
+              <%= link_to image.user.nickname, user_path(image.user.id), class:"imagecal-link" %>
             </div>
             <div>
               <%= "シーズン：#{image.season.name}"%>
