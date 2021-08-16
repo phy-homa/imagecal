@@ -16,16 +16,19 @@
               <%= "シーズン：#{line_item.image.season.name}"%>
             </div>
           </div>
-          
           <div class="bottom-data">
-            <%if line_item.image.tags.exists?%>
-              <% line_item.image.tags.each do |tag|%>
-                <%= "##{tag.name}" %>
-              <% end%>
-            <% end %>
+            <div>
+              <%if line_item.image.tags.exists?%>
+                <% line_item.image.tags.each do |tag|%>
+                  <%= "##{tag.name}" %>
+                <% end%>
+              <% end %>
+            </div>
+            <div class="delete-btn">
+              <%= link_to "削除", line_item_path(line_item.id), method: :delete, class:"imagecal-link" %>
+            </div>
           </div>
         </div>
-        <%= link_to "削除", line_item_path(line_item.id), method: :delete %>
       </div>
     <% end %>
   </div>
