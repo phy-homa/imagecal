@@ -11,8 +11,10 @@ class ImagesController < ApplicationController
 
   def create
     @image = ImageTag.new(image_params)
+
     if @image.valid?
       @image.save
+      @image.tags_save(@tag_list)
       return redirect_to root_path
     else
       render :new
@@ -31,6 +33,7 @@ class ImagesController < ApplicationController
 
   private
   def image_params
-    params.require(:image_tag).permit(:comment, :picture, :season_id, :name).merge(user_id: current_user.id)
+    @tag_list = params[:image_tag][:name].split(",")
+    params.require(:image_tag).permit(:comment, :picture, :season_id).merge(user_id: current_user.id)
   end
 end

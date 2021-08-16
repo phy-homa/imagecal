@@ -1,7 +1,7 @@
 class ImageTag
 
   include ActiveModel::Model 
-  attr_accessor :comment, :picture, :season_id, :name, :user_id
+  attr_accessor :comment, :picture, :season_id, :user_id, :name
 
   with_options presence: true do
     validates :picture
@@ -11,17 +11,15 @@ class ImageTag
 
   def save
     image = Image.create(comment: comment, picture: picture, season_id: season_id, user_id: user_id )
-
-    tag = Tag.where(name: name).first_or_initialize
-    tag.save
-    ImageTagRelation.create(image_id: image.id, tag_id: tag.id)
+    @image_id = image.id
   end
 
-  def save
-    image = Image.create(comment: comment, picture: picture, season_id: season_id, user_id: user_id )
+  def tags_save(tag_list)
+    tag_list.each do |tag|
 
-    tag = Tag.where(name: name).first_or_initialize
-    tag.save
-    ImageTagRelation.create(image_id: image.id, tag_id: tag.id)
+      tag = Tag.where(name: tag).first_or_initialize
+      tag.save
+    ImageTagRelation.create(image_id: @image_id, tag_id: tag.id)
+    end
   end
 end
