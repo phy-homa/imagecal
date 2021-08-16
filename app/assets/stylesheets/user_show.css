@@ -1,3 +1,21 @@
+.user-info{
+  margin-top: 50px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.userinfo-nickname{
+  background-color: lawngreen;
+  font-size: 24px;
+}
+.user-icon{
+  width: 600px;
+  height: 400px;
+  border: 1px solid darkgreen;
+  padd
+}
 .post_pictures{
   width: 100vw;
   height: 350px;

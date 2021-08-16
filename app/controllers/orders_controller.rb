@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   def new
     @order_mailing = OrderMailing.new
     @cart = Cart.find_by(id: session[:cart_id])
-    binding.pry
+
   end
 
   def create
@@ -14,9 +14,10 @@ class OrdersController < ApplicationController
     if @order_mailing.valid?
       pay_item
       @order_mailing.save
+      @cart.destroy
       return redirect_to root_path
     else
-      binding.pry
+
       render :new
     end
   end
