@@ -1,7 +1,6 @@
 .select-image{
   width: 420px;
   height: 350px;
-
   border: 5px solid khaki;
   margin: 25px;
 }
@@ -24,6 +23,9 @@
 .image-picture{
   width: 330px;
   height: 220px;
-  margin: 10px 45px 0;
+  margin: 10px 30px 0;
   border: 1px solid darkgreen;
+}
+.post-picture-info{
+  padding-left: 20px;
 }

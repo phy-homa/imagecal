@@ -10,6 +10,12 @@
   justify-content: left;
   align-items: center;
 }
+.cart-image-picture{
+  width: 330px;
+  height: 220px;
+  margin: 10px 45px 0;
+  border: 1px solid darkgreen;
+}
 .cart-menu{
   width: 100%;
   height: 80px;

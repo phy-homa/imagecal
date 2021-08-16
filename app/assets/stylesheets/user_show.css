@@ -1,31 +1,49 @@
 .user-info{
-  margin-top: 50px;
-  margin-left: 30px;
+  margin: 50px 0 50px 30px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 .userinfo-nickname{
-  background-color: lawngreen;
   font-size: 24px;
 }
 .user-icon{
   width: 600px;
   height: 400px;
-  border: 1px solid darkgreen;
-  padd
+  border: 5px solid khaki;
 }
-.post_pictures{
+.userinfo-introduce{
+  width: 600px;
+  height: 100px;
+  border: 1px solid darkolivegreen;
+}
+.userinfo-image{
+  width: 420px;
+  height: 300px;
+  margin: 0 25px ;
+  background-color: white;
+  border: 1px solid darkgreen;
+}
+.index-posts{
   width: 100vw;
-  height: 350px;
-  background-color: cadetblue;
+  height: 400px;
+  background-color: white;
+  border-top: 15px double khaki;
+  background-color: ivory;
+  padding-left: 10px;
+}
+.index-posts p{
+  font-size: 20px;
+}
+
+.post_pictures{
   display: flex;
   justify-content: left;
   align-items: center;
   overflow: scroll;
+  margin-top: 10px;
 }
-.picture_box{
-  border: 1px solid coral;
-  margin-left: 10px;
-}
+
