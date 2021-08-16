@@ -9,13 +9,13 @@
     <% @images.each do |image|%>
       <div class="select-image">
         <div class="picture-box">
-          <%= image_tag image.picture, class:"image-picture" %>
+          <%= link_to (image_tag image.picture, class:"image-picture"), image_path(image.id) %>
         </div>
         <div class="image-data">
           <div class="top-data">
             <div class="image-user">
-              <%= image_tag image.user.icon, class:"usericon" %>
-              <%= image.user.nickname %>
+              <%= link_to (image_tag image.user.icon, class:"usericon"), user_path(image.user.id) %>
+              <%= link_to image.user.nickname, user_path(image.user.id) %>
             </div>
             <div>
               <%= "シーズン：#{image.season.name}"%>
