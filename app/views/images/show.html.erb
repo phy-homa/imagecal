@@ -28,12 +28,12 @@
       </div>
       <div class="show-post">
         <% if user_signed_in? %>
-          <div class="show-btn">
-            <%= link_to 'カートに入れる', add_item_path(image_id: @image.id), method: :post, class:"show-link"  %>
+          <div class="imagecal-btn">
+            <%= link_to 'カートに入れる', add_item_path(image_id: @image.id), method: :post, class:"imagecal-link"  %>
           </div>
-            <div class="show-btn">
+            <div class="imagecal-btn">
               <% if current_user.id == @image.user_id%>
-                <%= link_to 'イラストを削除', image_path(@image.id), method: :delete, class:"show-link"%>
+                <%= link_to 'イラストを削除', image_path(@image.id), method: :delete, class:"imagecal-link"%>
               <% end %>
             </div>
         <% end %>

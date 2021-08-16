@@ -1,23 +1,47 @@
-
 <div class="main">
-  <p class="title">カートのなか</p>
+  <p class="cart-title">カートのなか</p>
+  <div class="cart-pictures">
     <% @line_items.each do |line_item|%>
       <div class="select-image">
-        <%= image_tag line_item.image.picture.variant(resize: '330x220') %>
-        <%= line_item.image.user.nickname %>
-        <% line_item.image.tags.each do |tag|%>
-          <%= "##{tag.name}" %>
-        <% end%>
-        <%= line_item.image.season.name%>
+        <div class="cart-picture-box">
+          <%= image_tag line_item.image.picture, class:"cart-picture" %>
+        </div>
+        <div class="cart-image-data">
+          <div class="cart-top-data">
+            <div class="cart-image-user">
+              <%= image_tag line_item.image.user.icon, class:"usericon" %>
+              <%= line_item.image.user.nickname %>
+            </div>
+            <div class="cart-image-season">
+              <%= "シーズン：#{line_item.image.season.name}"%>
+            </div>
+          </div>
+          
+          <div class="cart-bottom-data">
+            <%if line_item.image.tags.exists?%>
+              <% line_item.image.tags.each do |tag|%>
+                <%= "##{tag.name}" %>
+              <% end%>
+            <% end %>
+          </div>
+        </div>
         <%= link_to "削除", line_item_path(line_item.id), method: :delete %>
       </div>
     <% end %>
-
-    <%= link_to "トップに戻る", root_path%>
-    <%= link_to "カートの中を空にする", cart_path(@current_cart.id), method: :delete %>
-
-    <% if @current_cart.images.length == 12%>
-      <%= link_to "プレビューページ", new_calendar_path %>
-    <% end %>
+  </div>
+  <div class="cart-menu">
+    <div class="cart-menu-box">
+      <div class="imagecal-btn">
+        <%= link_to "トップに戻る", root_path, class:"imagecal-link" %>
+      </div>
+      <div class="imagecal-btn">
+        <%= link_to "カートを空にする", cart_path(@current_cart.id), method: :delete, class:"imagecal-link" %>
+      </div>
+      <% if @current_cart.images.length == 12%>
+        <div class="imagecal-btn">
+          <%= link_to "プレビューページ", new_calendar_path, class:"imagecal-link" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
