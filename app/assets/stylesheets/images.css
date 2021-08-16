@@ -1,0 +1,29 @@
+.select-image{
+  width: 420px;
+  height: 350px;
+
+  border: 5px solid khaki;
+  margin: 25px;
+}
+
+.image-data{
+  padding: 0 20px;
+}
+.top-data{
+  display: flex;
+  justify-content: space-between;
+}
+.usericon{
+  height: 40px;
+  width: 40px;
+  border: 1px solid darkgreen;
+}
+.image-user{
+  font-size: 25px;
+}
+.image-picture{
+  width: 330px;
+  height: 220px;
+  margin: 10px 45px 0;
+  border: 1px solid darkgreen;
+}

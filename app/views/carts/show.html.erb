@@ -3,21 +3,21 @@
   <div class="cart-pictures">
     <% @line_items.each do |line_item|%>
       <div class="select-image">
-        <div class="cart-picture-box">
-          <%= image_tag line_item.image.picture, class:"cart-picture" %>
+        <div class="picture-box">
+          <%= image_tag line_item.image.picture, class:"image-picture" %>
         </div>
-        <div class="cart-image-data">
-          <div class="cart-top-data">
-            <div class="cart-image-user">
+        <div class="image-data">
+          <div class="top-data">
+            <div class="image-user">
               <%= image_tag line_item.image.user.icon, class:"usericon" %>
               <%= line_item.image.user.nickname %>
             </div>
-            <div class="cart-image-season">
+            <div>
               <%= "シーズン：#{line_item.image.season.name}"%>
             </div>
           </div>
           
-          <div class="cart-bottom-data">
+          <div class="bottom-data">
             <%if line_item.image.tags.exists?%>
               <% line_item.image.tags.each do |tag|%>
                 <%= "##{tag.name}" %>
