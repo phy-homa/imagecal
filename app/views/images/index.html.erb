@@ -14,7 +14,7 @@
         <div class="image-data">
           <div class="top-data">
             <div class="image-user">
-              <%= link_to (image_tag image.user.icon, class:"usericon" unless.image.user.icon.blank?), user_path(image.user.id) %>
+              <%= link_to (image_tag image.user.icon, class:"usericon"), user_path(image.user.id) %>
               <%= link_to image.user.nickname, user_path(image.user.id), class:"imagecal-link" %>
             </div>
             <div>

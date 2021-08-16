@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true, length:{maximum: 8}
   validates :firstname, presence: true
   validates :lastname, presence: true
+  validates :icon, presence: true
 
   has_one_attached :icon
 
