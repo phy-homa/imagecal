@@ -25,13 +25,21 @@
   font-size: 28px;
   display: flex;
   align-items: center;
-
 }
 .show-user-icon{
   width: 70px;
   height: 70px;
-  background-color: darkmagenta;
+  background-color: white;
   margin-right: 10px;
+  border: 1px solid darkgreen;
+}
+.show-user-nickname{
+  text-decoration: none;
+  color: darkgreen;
+}
+.user-icon-show{
+  width: 70px;
+  height: 70px;
 }
 .show-comment{
   width: 480px;

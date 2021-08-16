@@ -7,9 +7,10 @@
     <div class="picture-data">
       <div class="show-user-data">
         <div class="show-user-icon">
+          <%= image_tag @image.user.icon, class:"user-icon-show" %>
         </div>
-        <div class="show-user-nickname">
-          <%= link_to @image.user.nickname, user_path(@image.user.id) %>
+        <div>
+          <%= link_to @image.user.nickname, user_path(@image.user.id), class:"show-user-nickname" %>
         </div>
       </div>
       <p>＜コメント＞</p>
