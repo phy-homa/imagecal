@@ -10,6 +10,7 @@ require("channels")
 require("../pictpreview")
 require("../menu")
 require("../card")
+require("../iconpreview")
 
 
 

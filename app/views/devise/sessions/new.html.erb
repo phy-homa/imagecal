@@ -1,10 +1,10 @@
 <div class="main">
-  <p class="devise-title">＜Imagecalにログイン＞</p>
-  <div class="devise-login-form">
+  <p class="devise-title">Imagecalにログイン</p>
+  <div class="devise-form">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"email-box" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"long-box" %>
       </div>
 
       <div class="field">
