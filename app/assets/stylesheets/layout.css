@@ -68,8 +68,8 @@
   font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
 }
 .menu-list{
-  width: 130px;
-  height: 60px;
+  width: 120px;
+  height: 90px;
   border: 1px solid #00552e;
   background-color: white;
   position: absolute;
@@ -88,11 +88,12 @@
 }
 .logout,
 .mypage,
-.cart-inside{
+.user-order{
   height: 30px;
 }
 
-.logout{
+.logout,
+.mypage{
   border-bottom: 1px solid #00552e;
 }
 .main{

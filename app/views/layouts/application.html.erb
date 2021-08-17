@@ -30,14 +30,16 @@
             <div class="mypage">
               <li class="menu-select"><%= link_to "設定", users_path %></li>
             </div>
-            
+            <div class="user-order">
+              <li class="menuselect"><%= link_to "購入履歴", ordering_path, method: :get %></li>
+            </div>
           </ul>
         <% else %>
           <div class="user_btn">
             <%= link_to "新規登録", new_user_path%>
           </div>
           <div class="user_btn">
-            <%= link_to "ログイン",new_user_session_path %>
+            <%= link_to "ログイン", new_user_session_path %>
           </div>
         <% end %> 
       </div>

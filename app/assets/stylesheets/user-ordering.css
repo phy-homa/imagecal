@@ -1,0 +1,10 @@
+.user-orderings{
+  margin-top: 40px;
+  background-color: darkred;
+}
+.ordering{
+  width: 500px;
+  height: 40px;
+  border: 1px solid darkseagreen;
+  background-color: white;
+}

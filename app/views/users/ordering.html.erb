@@ -1,0 +1,8 @@
+<div class="main">
+  <p class="title">購入履歴</p>
+  <div class="user-orderings">
+  <% @orders.each do |order| %>
+  <div class="ordering">
+    <%= link_to "注文日：#{order.created_at}", show_order_calendar_path(order.id)%>
+  </div>
+  <% end %>

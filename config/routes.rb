@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   root to: "images#index"
   resources :images, only: [:index, :new, :create, :show, :destroy]
   resources :users, only: [:new, :show, :index]
+  get '/ordering' => 'users#ordering'
   resources :carts, only:[:show, :destroy]
   post '/add_item' => 'carts#add_item'
   resources :line_items, only: :destroy
   resources :calendars, only: [:new, :create, :show] do
+    member do 
+      get'show_order'
+    end
     resources :orders, only: [:new, :create]
   end
 end

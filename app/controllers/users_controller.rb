@@ -13,4 +13,11 @@ class UsersController < ApplicationController
   def index
     @user = current_user
   end
+
+  def ordering
+    @orders = Order.includes(:user)
+    
+    
+  end
 end
+@orders
