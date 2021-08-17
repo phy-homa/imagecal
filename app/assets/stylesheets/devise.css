@@ -1,0 +1,33 @@
+.devise-title{
+  width: 50%;
+  height: 30px;
+  margin: 20px auto;
+  font-size: 24px;
+  color: darkolivegreen;
+}
+.devise-login-form{
+  width: 50%;
+  height: 470px;
+  padding: 20px 0 20px 70px;
+  margin: 0 auto;
+  border: 5px solid khaki;
+}
+.field{
+  margin-top: 40px;
+}
+.email-box{
+  width: 60%;
+}
+.devise-btn{
+  width: 100px;
+  height: 30px;
+  color: darkolivegreen;
+  border: 1px solid darkolivegreen;
+  background-color: ivory;
+  margin-left: 150px;
+  margin-bottom: 50px;
+}
+.devise-link{
+  color: darkolivegreen;
+  text-decoration: none;
+}
