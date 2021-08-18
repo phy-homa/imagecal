@@ -38,8 +38,8 @@ class CalendarsController < ApplicationController
 
   def show_order
 
-    @calendar = Calendar.find(params[:id])
-    @image_months = @calendar.image_month.all.order("month ASC")
+    @order = Order.find(params[:id])
+    @image_months = @order.calendar.image_month.all.order("month ASC")
     @image_month1 = @image_months[0]
     @image_month2 = @image_months[1]
     @image_month3 = @image_months[2]
@@ -52,7 +52,7 @@ class CalendarsController < ApplicationController
     @image_month10 = @image_months[9]
     @image_month11 = @image_months[10]
     @image_month12 = @image_months[11]
-    @images = @calendar.images
+    @images = @order.calendar.images
 
   end
 

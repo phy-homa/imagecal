@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def ordering
-    @orders = current_user.orders
+    @orders = current_user.orders.includes(:user)
     
     
   end
