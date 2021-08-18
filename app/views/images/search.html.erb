@@ -1,0 +1,28 @@
+<div class="page">
+  
+  <div class= "main">
+    <div class="app_info">
+      アプリ概要
+    </div>
+  <div class="seach-fom">
+    <%= form_with(url: search_images_path, local: true, method: :get) do |f| %>
+      <%= f.text_field :keyword, placeholder: "検索する" %>
+      <%= f.submit "検索" %>
+    <% end %>
+  </div>
+  <%= render partial:"pictures" %>
+  <% if user_signed_in? %>
+    <div class="bottom-menu">
+      <div class="image-post-link">
+        <%= link_to (image_tag 'icon_post.png', class:"post-icon"), new_image_path, class:"image_post"%>
+        <p>投稿する</p>
+      </div>
+      <% unless @cart.nil? %>
+        <div class="cart-inside">
+          <%= link_to (image_tag 'icon_cart.png', class:"cart-icon"), cart_path(@cart.id) %>
+          <p>カートを見る</p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

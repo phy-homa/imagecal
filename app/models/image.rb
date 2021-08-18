@@ -12,7 +12,6 @@ class Image < ApplicationRecord
   has_many :calendars, through: :image_calendars
 
 
-
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :season
 end

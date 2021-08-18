@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   }
 
   root to: "images#index"
-  resources :images, only: [:index, :new, :create, :show, :destroy]
+  resources :images, only: [:index, :new, :create, :show, :destroy] do
+   collection do
+     get 'search'
+   end
+  end
   resources :users, only: [:new, :show, :index]
   get '/ordering' => 'users#ordering'
   resources :carts, only:[:show, :destroy]

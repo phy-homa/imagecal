@@ -4,34 +4,13 @@
     <div class="app_info">
       アプリ概要
     </div>
-  <h1>新着順</h1>
-  <div class="picture_posts">
-    <% @images.each do |image|%>
-      <div class="select-image">
-        <div class="picture-box">
-          <%= link_to (image_tag image.picture, class:"image-picture"), image_path(image.id) %>
-        </div>
-        <div class="image-data">
-          <div class="top-data">
-            <div class="image-user">
-              <%= link_to (image_tag image.user.icon, class:"usericon"), user_path(image.user.id) %>
-              <%= link_to image.user.nickname, user_path(image.user.id), class:"imagecal-link" %>
-            </div>
-            <div>
-              <%= "シーズン：#{image.season.name}"%>
-            </div>
-          </div>
-          <div class="bottom-data">
-            <%if image.tags.exists?%>
-              <% image.tags.each do |tag|%>
-                <%= "##{tag.name}" %>
-              <% end%>
-            <% end %>
-          </div>
-        </div>
-      </div>
+  <div class="seach-fom">
+    <%= form_with(url: search_images_path, local: true, method: :get) do |f| %>
+      <%= f.text_field :keyword, placeholder: "検索する" %>
+      <%= f.submit "検索" %>
     <% end %>
   </div>
+  <%= render partial:"pictures" %>
   <% if user_signed_in? %>
       <div class="bottom-menu">
         <div class="image-post-link">

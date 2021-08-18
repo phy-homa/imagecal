@@ -31,6 +31,10 @@ class ImagesController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @images = Tag.search(params[:keyword])
+  end
+
   private
   def image_params
     @tag_list = params[:image_tag][:name].split(",")
