@@ -56,3 +56,15 @@ border: 1px solid darkgreen;
   margin: auto 30px;
   color: darkolivegreen;
 }
+.purchase{
+  width: 8%;
+  height: 40px;
+  border: 1px solid darkolivegreen;
+  background-color: ivory;
+  text-align: center;
+  position: fixed;
+  left: 41%;
+  bottom: 50px;
+  font-size: 20px;
+
+}

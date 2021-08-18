@@ -1,7 +1,9 @@
 <div class="main">
-  <p class="title">＜カレンダープレビュー＞　　カレンダー一律：1000円（税抜き）</p>
+  <p class="title">＜カレンダープレビュー＞　　all: 1000円（税抜き）</p>
     <%= render partial:"calendar" %>
-  <%= link_to "購入へ", new_calendar_order_path(@calendar) %>
+  <div class="purchase">
+    <%= link_to "購入へ", new_calendar_order_path(@calendar), class:"imagecal-link" %>
+  </div>
 </div>
 
 
