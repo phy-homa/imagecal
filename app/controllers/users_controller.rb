@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: :setting
+  before_action :authenticate_user!, only: [:index, :ordering]
 
   def new
 
