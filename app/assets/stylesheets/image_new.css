@@ -1,13 +1,18 @@
+.post-title{
+  font-size: 24px;
+  color: darkolivegreen;
+  margin: 20px 140px;
+}
 .form{
-  width: 100vw;
-  height: 100vh;
+  width: 70%;
   display: flex;
   flex-direction: column;
-  background-color: lightgreen;
+  background-color: white;
   align-items: center;
   margin: 10px auto;
-  padding-top: 15px;
-  
+  padding: 30px 0;
+  border: 5px solid khaki;
+  color: darkolivegreen;
 }
 .picture-form,
 .comment-form,
@@ -25,13 +30,13 @@
 .tag-box,
 .comment-box{
   width: 550px;
+  border: 1px solid darkgreen;
 }
-
-
+.caution{
+  font-size: 12px;
+}
 .submit-form{
 display: flex;
 justify-content: center;
-}
-.submit-btn{
-  padding: auto;
+
 }
