@@ -11,6 +11,7 @@ require("../pictpreview")
 require("../menu")
 require("../card")
 require("../iconpreview")
+require("../monthselect")
 
 
 
