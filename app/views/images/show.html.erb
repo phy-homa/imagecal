@@ -31,11 +31,11 @@
           <div class="imagecal-btn">
             <%= link_to 'カートに入れる', add_item_path(image_id: @image.id), method: :post, class:"imagecal-link"  %>
           </div>
+          <% if current_user.id == @image.user_id%>
             <div class="imagecal-btn">
-              <% if current_user.id == @image.user_id%>
-                <%= link_to 'イラストを削除', image_path(@image.id), method: :delete, class:"imagecal-link"%>
-              <% end %>
+              <%= link_to 'イラストを削除', image_path(@image.id), method: :delete, class:"imagecal-link"%>
             </div>
+          <% end %>
         <% end %>
     </div>
   </div>

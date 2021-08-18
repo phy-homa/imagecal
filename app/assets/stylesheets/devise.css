@@ -77,3 +77,9 @@
   color: darkolivegreen;
   text-decoration: none;
 }
+.devise-bottom-menu{
+  width: 80%;
+  display: flex;
+  margin: 10px auto;
+  justify-content: space-between;
+}

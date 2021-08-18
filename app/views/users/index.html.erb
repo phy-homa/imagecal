@@ -1,5 +1,10 @@
 <div class="main">
-  <p class="title">＜設定＞</p>
+  <div class="top-content">
+    <p class="setting-title">ユーザー設定</p>
+    <div class="setting-edit-box">
+      <%= link_to "編集",edit_user_registration_path(current_user.id), class:"imagecal-link" %>
+    </div>
+  </div>
   <div class="setting">
     <div class="setting-nickname">
       <%= "ユーザー名:#{@user.nickname}" %>
@@ -7,13 +12,12 @@
     <div class="setting-email">
       <%= "email:#{@user.email}" %>
     </div>
-    <div class="setting-icon">
-      <%= image_tag @user.icon.variant(resize: '280x280') unless @user.icon.blank? %>
+    <div>
+      <%= image_tag @user.icon, class:"setting-icon" %>
     </div>
     <div class="setting-introduce">
       <h1>紹介:</h1>
       <%= @user.introduce %>
     </div>
   </div>
-  <%= link_to "編集",edit_user_registration_path(current_user.id) %>
 </div>
