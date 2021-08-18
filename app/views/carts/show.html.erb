@@ -1,5 +1,5 @@
 <div class="main">
-  <p class="cart-title">カートのなか</p>
+  <p class="cart-title">＜カートのなか＞</p>
   <div class="cart-pictures">
     <% @line_items.each do |line_item|%>
       <div class="select-image">
@@ -33,18 +33,23 @@
     <% end %>
   </div>
   <div class="cart-menu">
-    <div class="cart-menu-box">
-      <div class="imagecal-btn">
-        <%= link_to "トップに戻る", root_path, class:"imagecal-link" %>
-      </div>
-      <div class="imagecal-btn">
-        <%= link_to "カートを空にする", cart_path(@current_cart.id), method: :delete, class:"imagecal-link" %>
-      </div>
-      <% if @current_cart.images.length == 12%>
+    <div class="cart-bottom-menu">
+      <div class="cart-menu-box">
         <div class="imagecal-btn">
-          <%= link_to "プレビューページ", new_calendar_path, class:"imagecal-link" %>
+          <%= link_to "トップに戻る", root_path, class:"imagecal-link" %>
         </div>
-      <% end %>
+        <div class="imagecal-btn">
+          <%= link_to "カートを空にする", cart_path(@current_cart.id), method: :delete, class:"imagecal-link" %>
+        </div>
+        <% if @current_cart.images.length == 12%>
+          <div class="imagecal-btn">
+            <%= link_to "プレビューページ", new_calendar_path, class:"imagecal-link" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="images-count">
+        <%= "合計：　#{@current_cart.images.length}個" %>
+      </div>
     </div>
-  </div>
+  <div>
 </div>
