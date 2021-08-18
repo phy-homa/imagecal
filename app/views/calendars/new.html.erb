@@ -2,8 +2,16 @@
   <p class="title">＜カレンダー作成画面＞</p>
   <div class="make-calendar">
     <% @images.each do |image| %>
-      <div class="calendar-picture">
-        <%= image_tag image.picture, class:"picture-box" %>
+      <div class="calendar-info">
+        <div class="calendar-picture">
+          <%= image_tag image.picture, class:"picture-box" %>
+        </div>
+        <div>
+          <%= "シーズン：　#{image.season.name}" %><br />
+          <% image.tags.each do |tag| %>
+            <%= "##{tag.name}" %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
