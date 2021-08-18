@@ -1,8 +1,17 @@
 <div class="main">
-  <p class="title">SNS認証</p>
-  <div class="ユーザー認証">
-    <%= link_to "Facebook", user_facebook_omniauth_authorize_path, method: :post %>
-    <%= link_to "Google", user_google_oauth2_omniauth_authorize_path, method: :post %>
-    <%= link_to "ユーザー認証しない", new_user_registration_path%>
+  <p class="method-select-title">アカウント登録の方法</p>
+  <div class="user-signup-method">
+    <div class="google">
+      <%= link_to (image_tag 'google-icon.png', class:"method-icon"), user_google_oauth2_omniauth_authorize_path, method: :post %><br />
+      <%= link_to "Google認証", user_google_oauth2_omniauth_authorize_path, class:"method-select", method: :post %>
+    </div>
+    <div class="facebook">
+      <%= link_to (image_tag 'facebook-icon.png', class:"method-icon"), user_facebook_omniauth_authorize_path, method: :post %><br />
+      <%= link_to "Facebook認証", user_facebook_omniauth_authorize_path, class:"method-select", method: :post %>
+    </div>
+    <div class="email">
+      <%= link_to (image_tag 'mail-icon.png', class:"method-icon"), new_user_registration_path%><br />
+      <%= link_to "メールアドレスで", new_user_registration_path, class:"method-select" %>
+    </div>
   </div>
 </div>

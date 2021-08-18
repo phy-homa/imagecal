@@ -1,0 +1,27 @@
+.method-select-title{
+  width: 50%;
+  height: 30px;
+  margin: 40px auto;
+  font-size: 24px;
+  color: darkolivegreen;
+}
+.user-signup-method{
+  background-color: white;
+  width: 60%;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  border: 5px solid khaki;
+}
+.method-icon{
+width: 140px;
+height: 140px;
+margin-bottom: 10px;
+}
+.method-select{
+  text-decoration: none;
+  color: darkolivegreen;
+  font-size: 20px;
+}
