@@ -79,7 +79,7 @@
   background-color: #F0FFF0;
 }
 
-/* calendar#show */
+/* calendars#show */
 .preview{
   height: 500px;
   width: 4800px;
@@ -110,4 +110,27 @@
   width: 330px;
   height: 220px;
   background-color: white;
+}
+
+/* calendars#show_order */
+.calendar-title{
+  font-size: 20px;
+  color: darkolivegreen;
+  
+}
+.calendar-top-content{
+  display: flex;
+  margin: 10px 0 10px 40px ;
+}
+.mailing{
+  padding: 10px 30px;
+  width: 60%;
+  border: 5px solid khaki;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  color: darkolivegreen;
+}
+.mailing-info{
+  margin-left: 60px;
 }

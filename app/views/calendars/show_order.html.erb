@@ -1,2 +1,20 @@
-しょうおーだー
-<%= render partial:"calendar" %>
+<div class="main">
+  <div class="calendar-top-content">
+    <div>
+      <p class="calendar-title"><%= "#{l @order.calendar.created_at}の注文分" %></p>
+    </div>
+    <div class="mailing">
+      <p>郵送先：</p>
+      <div class="mailing-info">
+        <%= "〒#{@order.mailing.postal_code}　" %>
+        <%= @order.mailing.prefecture.name %>
+        <%= @order.mailing.city %>
+        <%= @order.mailing.address %>
+        <%= @order.mailing.building  if @order.mailing.building.present?%><br />
+        <%= "#{current_user.firstname}　#{current_user.lastname}様宛" %>
+        <%= "　　TEL:#{@order.mailing.tel}" %>
+      </div>
+    </div>
+  </div>
+  <%= render partial:"calendar" %>
+</div>

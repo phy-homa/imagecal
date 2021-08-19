@@ -37,7 +37,6 @@ class CalendarsController < ApplicationController
   end
 
   def show_order
-
     @order = Order.find(params[:id])
     @image_months = @order.calendar.image_month.all.order("month ASC")
     @image_month1 = @image_months[0]
