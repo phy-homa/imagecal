@@ -1,10 +1,14 @@
 .user-orderings{
-  margin-top: 40px;
-  background-color: darkred;
+
+  width: 80%;
+  margin: 70px auto 30px;
+  overflow: scroll;
 }
 .ordering{
   width: 500px;
   height: 40px;
-  border: 1px solid darkseagreen;
+  border: 5px solid khaki;
   background-color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
