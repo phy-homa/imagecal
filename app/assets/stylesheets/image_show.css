@@ -55,3 +55,11 @@
   display: flex;
   justify-content: space-around;
 }
+.sns-share{
+  margin-top: 20px;
+}
+.share-icon{
+  margin: 10px 10px;
+  width: 45px;
+  height: 45px;
+}

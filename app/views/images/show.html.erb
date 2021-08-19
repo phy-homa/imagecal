@@ -26,6 +26,11 @@
           <%= "##{tag.name}　" %>
         <% end %>
       </div>
+      <div class="sns-share">
+        <p>＜SNSでシェア＞</p>
+        <%= link_to (image_tag "twitter-icon", class:"share-icon"), "http://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
+        <%= link_to (image_tag "line-icon", class:"share-icon"), "https://social-plugins.line.me/lineit/share?url=#{request.url}" %>
+      </div>
       <div class="show-post">
         <% if user_signed_in? %>
           <div class="imagecal-btn">
