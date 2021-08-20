@@ -1,4 +1,4 @@
-<% if @images_may.present? %>
+<% if @images_may.exists? %>
   <% @images_may.each do |image|%>
       <div class="select-image">
       <div class="picture-box">

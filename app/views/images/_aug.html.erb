@@ -1,4 +1,4 @@
-<% if @images_aug.present? %>
+<% if @images_aug.exists? %>
   <% @images_aug.each do |image|%>
       <div class="select-image">
       <div class="picture-box">

@@ -10,7 +10,7 @@
         <%= @order.mailing.prefecture.name %>
         <%= @order.mailing.city %>
         <%= @order.mailing.address %>
-        <%= @order.mailing.building  if @order.mailing.building.present?%><br />
+        <%= @order.mailing.building  if @order.mailing.building.exists?%><br />
         <%= "#{current_user.firstname}　#{current_user.lastname}様宛" %>
         <%= "　　TEL:#{@order.mailing.tel}" %>
       </div>
