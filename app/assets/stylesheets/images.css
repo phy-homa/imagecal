@@ -29,3 +29,23 @@
 .post-picture-info{
   padding-left: 20px;
 }
+.image-index-title{
+  color: darkolivegreen;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.new-arrival{
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.tag-search-btn{
+  color: darkolivegreen;
+  border: 1px solid darkolivegreen;
+  width: 50px;
+  background-color: ivory;
+
+}
