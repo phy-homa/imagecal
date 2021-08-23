@@ -3,6 +3,7 @@ FactoryBot.define do
     comment    {Faker::Lorem.sentence}
     season_id  { 2 }
     name       {Faker::Lorem.word}
-    picture    {"test.png"}
+    picture{
+    Rack::Test::UploadedFile.new(File.join(Rails.root, 'public/images/test_image.png')) }
   end
 end

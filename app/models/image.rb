@@ -1,8 +1,6 @@
 class Image < ApplicationRecord
 
-
   has_one_attached :picture
-
   belongs_to :user
   has_many :image_tag_relations
   has_many :tags, through: :image_tag_relations, dependent: :destroy
