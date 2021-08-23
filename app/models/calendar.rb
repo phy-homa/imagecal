@@ -18,20 +18,19 @@ class Calendar < ApplicationRecord
   belongs_to :month11
   belongs_to :month12
 
-  with_options numericality: {other_than:1} do
-    validates :month1_id
-    validates :month2_id
-    validates :month3_id
-    validates :month4_id
-    validates :month5_id
-    validates :month6_id
-    validates :month7_id
-    validates :month8_id
-    validates :month9_id
-    validates :month10_id
-    validates :month11_id
-    validates :month12_id
-  end
+  validates :month1_id, numericality: {other_than:1, message:"を選択してください(Picture1)"}
+  validates :month2_id, numericality: {other_than:1, message:"を選択してください(Picture2)"}
+  validates :month3_id, numericality: {other_than:1, message:"を選択してください(Picture3)"}
+  validates :month4_id, numericality: {other_than:1, message:"を選択してください(Picture4)"}
+  validates :month5_id, numericality: {other_than:1, message:"を選択してください(Picture5)"}
+  validates :month6_id, numericality: {other_than:1, message:"を選択してください(Picture6)"}
+  validates :month7_id, numericality: {other_than:1, message:"を選択してください(Picture7)"}
+  validates :month8_id, numericality: {other_than:1, message:"を選択してください(Picture8)"}
+  validates :month9_id, numericality: {other_than:1, message:"を選択してください(Picture9)"}
+  validates :month10_id, numericality: {other_than:1, message:"を選択してください(Picture10)"}
+  validates :month11_id, numericality: {other_than:1, message:"を選択してください(Picture11)"}
+  validates :month12_id, numericality: {other_than:1, message:"を選択してください(Picture12)"}
+
 
   with_options presence: true do
     validates :img1
