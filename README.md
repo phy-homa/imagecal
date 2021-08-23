@@ -6,7 +6,7 @@ Imagecal
 
 # 本番環境
 ## デプロイ先
-- https://imagecal.herokuapp.com/
+- http://35.76.155.128:3000/ 
 
 ## テストアカウント
 - email: test2@test.com
