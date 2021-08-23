@@ -8,6 +8,7 @@ class ImageTag
     validates :user_id
   end
   validates :season_id, numericality:{ other_than: 1, message: "can't be blank"}
+  validates :name, format: { with: /^#/}
 
   def save
     image = Image.create(comment: comment, picture: picture, season_id: season_id, user_id: user_id )

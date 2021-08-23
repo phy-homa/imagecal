@@ -64,7 +64,8 @@ MySQL2 0.4.4
 Github
 GithubDesktop
 rspec-rails 4.0.0
-heroku
+AWS(EC2)
+unicorn
 Visual Studio Code
 
 # 課題や今後実装したい機能

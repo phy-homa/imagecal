@@ -18,17 +18,35 @@ class Calendar < ApplicationRecord
   belongs_to :month11
   belongs_to :month12
 
-  validates :month1_id, numericality: {other_than:1}
-  validates :month2_id, numericality: {other_than:1}
-  validates :month3_id, numericality: {other_than:1}
-  validates :month4_id, numericality: {other_than:1}
-  validates :month5_id, numericality: {other_than:1}
-  validates :month6_id, numericality: {other_than:1}
-  validates :month7_id, numericality: {other_than:1}
-  validates :month8_id, numericality: {other_than:1}
-  validates :month9_id, numericality: {other_than:1}
-  validates :month10_id, numericality: {other_than:1}
-  validates :month11_id, numericality: {other_than:1}
-  validates :month12_id, numericality: {other_than:1}
+  with_options numericality: {other_than:1} do
+    validates :month1_id
+    validates :month2_id
+    validates :month3_id
+    validates :month4_id
+    validates :month5_id
+    validates :month6_id
+    validates :month7_id
+    validates :month8_id
+    validates :month9_id
+    validates :month10_id
+    validates :month11_id
+    validates :month12_id
+  end
+
+  with_options presence: true do
+    validates :img1
+    validates :img2
+    validates :img3
+    validates :img4
+    validates :img5
+    validates :img6
+    validates :img7
+    validates :img8
+    validates :img9
+    validates :img10
+    validates :img11
+    validates :img12
+  end
+
 
 end
