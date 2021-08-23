@@ -14,7 +14,8 @@ class CalendarsController < ApplicationController
       ImageMonth.save(@calendar)
       redirect_to calendar_path(@calendar.id)
     else
-      render :new
+      flash[:notice] = "選択漏れがあります！下の表を確認してください！"
+      redirect_to new_calendar_path
     end
   end
 

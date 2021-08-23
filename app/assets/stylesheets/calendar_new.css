@@ -134,3 +134,10 @@
 .mailing-info{
   margin-left: 60px;
 }
+.errors{
+  width: 400px;
+  margin: 0 400px;
+  color: darkred;
+  border: 1px solid darkred;
+  text-align: center;
+}

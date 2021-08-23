@@ -1,5 +1,6 @@
 <%= form_with model: @image, url: images_path, local: true do |f| %>
 <div class="form">
+  <%= render 'layouts/error_messages', model: f.object %>
   <div class="picture-form">
     <%= f.label :picture, "イラスト" %>
     <%= f.file_field :picture, id: "image_picture" %>

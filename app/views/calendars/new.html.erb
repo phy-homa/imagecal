@@ -1,5 +1,8 @@
 <div class="main">
   <p class="title">＜カレンダー作成画面＞</p>
+  <% if flash[:notice] %>
+    <p class="errors"><%= flash[:notice] %></p>
+  <% end %>
   <div class="make-calendar">
     <% @images.each do |image| %>
       <div class="calendar-info">

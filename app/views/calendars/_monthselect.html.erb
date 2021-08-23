@@ -1,70 +1,70 @@
 <div class="month-select-form">
-      <%= form_with model: @calendar, url: calendars_path, id:"form-box",  local: true do |f|%>
-        <div class="month-select">
-          <div class="pict">
-            <%= f.label :month1_id, "PICTURE1",class:"month-label" %>
-            <%= f.hidden_field :img1, value:@images[0].id %>
-            <%= f.collection_select(:month1_id, Month1.all, :id, :name, {}, {class:"month_select_box", id:"select1"}) %>
-          </div>
-        <div class="pict">
-          <%= f.label :month2_id, "PICTURE2",class:"month-label" %>
-          <%= f.hidden_field :img2, value:@images[1].id %>
-          <%= f.collection_select(:month2_id, Month2.all, :id, :name, {}, {class:"month_select_box", id:"select2"}) %>
-        </div>
-        <div class="pict">
-          <%= f.label :month3_id, "PICTURE3",class:"month-label" %>
-          <%= f.hidden_field :img3, value:@images[2].id %>
-          <%= f.collection_select(:month3_id, Month3.all, :id, :name, {}, {class:"month_select_box", id:"select3"}) %>
-        </div>
-        <div class="pict">
-          <%= f.label :month4_id, "PICTURE4",class:"month-label" %>
-          <%= f.hidden_field :img4, value:@images[3].id %>
-          <%= f.collection_select(:month4_id, Month4.all, :id, :name, {}, {class:"month_select_box", id:"select4"}) %>
-        </div>
-        <div class="pict">
-          <%= f.label :month5_id, "PICTURE5",class:"month-label" %>
-          <%= f.hidden_field :img5, value:@images[4].id %>
-          <%= f.collection_select(:month5_id, Month5.all, :id, :name, {}, {class:"month_select_box", id:"select5"}) %>
-        </div>
-        <div class="pict">
-          <%= f.label :month6_id, "PICTURE6",class:"month-label" %>
-          <%= f.hidden_field :img6, value:@images[5].id %>
-          <%= f.collection_select(:month6_id, Month6.all, :id, :name, {}, {class:"month_select_box", id:"select6"}) %>
-        </div>
-        <div class="pict">
-          <%= f.label :month7_id, "PICTURE7",class:"month-label" %>
-          <%= f.hidden_field :img7, value:@images[6].id %>
-          <%= f.collection_select(:month7_id, Month7.all, :id, :name, {}, {class:"month_select_box", id:"select7"}) %>
-        </div>
-        <div class="pict">
-          <%= f.label :month8_id, "PICTURE8",class:"month-label" %>
-          <%= f.hidden_field :img8, value:@images[7].id %>
-          <%= f.collection_select(:month8_id, Month8.all, :id, :name, {}, {class:"month_select_box", id:"select8"}) %>
-        </div>
-        <div class="pict">
-          <%= f.label :month9_id, "PICTURE9",class:"month-label" %>
-          <%= f.hidden_field :img9, value:@images[8].id %>
-          <%= f.collection_select(:month9_id, Month9.all, :id, :name, {}, {class:"month_select_box", id:"select9"}) %>
-        </div>
-        <div class="pict">
-          <%= f.label :month10_id, "PICTURE10",class:"month-label" %>
-          <%= f.hidden_field :img10, value:@images[9].id %>
-          <%= f.collection_select(:month10_id, Month10.all, :id, :name, {}, {class:"month_select_box", id:"select10"}) %>
-        </div>
-        <div class="pict">
-          <%= f.label :month11_id, "PICTURE11",class:"month-label" %>
-          <%= f.hidden_field :img11, value:@images[10].id %>
-          <%= f.collection_select(:month11_id, Month11.all, :id, :name, {}, {class:"month_select_box", id:"select11"}) %>
-        </div>
-        <div class="pict">
-          <%= f.label :month12_id, "PICTURE12",class:"month-label" %>
-          <%= f.hidden_field :img12, value:@images[11].id %>
-          <%= f.collection_select(:month12_id, Month12.all, :id, :name, {}, {class:"month_select_box", id:"select12"}) %>
-        </div>
+  <%= form_with model: @calendar, url: calendars_path, id:"form-box",  local: true do |f|%>
+    <div class="month-select">
+      <div class="pict">
+        <%= f.label :month1_id, "PICTURE1",class:"month-label" %>
+        <%= f.hidden_field :img1, value:@images[0].id %>
+        <%= f.collection_select(:month1_id, Month1.all, :id, :name, {}, {class:"month_select_box", id:"select1"}) %>
       </div>
-      <%= render partial:"selected" %>
-      <div class="send-btn-box">
-        <%= f.submit "SEND", class:"send-btn" %>
+      <div class="pict">
+        <%= f.label :month2_id, "PICTURE2",class:"month-label" %>
+        <%= f.hidden_field :img2, value:@images[1].id %>
+        <%= f.collection_select(:month2_id, Month2.all, :id, :name, {}, {class:"month_select_box", id:"select2"}) %>
       </div>
-    <% end %>
-  </div>
+      <div class="pict">
+        <%= f.label :month3_id, "PICTURE3",class:"month-label" %>
+        <%= f.hidden_field :img3, value:@images[2].id %>
+        <%= f.collection_select(:month3_id, Month3.all, :id, :name, {}, {class:"month_select_box", id:"select3"}) %>
+      </div>
+      <div class="pict">
+        <%= f.label :month4_id, "PICTURE4",class:"month-label" %>
+        <%= f.hidden_field :img4, value:@images[3].id %>
+        <%= f.collection_select(:month4_id, Month4.all, :id, :name, {}, {class:"month_select_box", id:"select4"}) %>
+      </div>
+      <div class="pict">
+        <%= f.label :month5_id, "PICTURE5",class:"month-label" %>
+        <%= f.hidden_field :img5, value:@images[4].id %>
+        <%= f.collection_select(:month5_id, Month5.all, :id, :name, {}, {class:"month_select_box", id:"select5"}) %>
+      </div>
+      <div class="pict">
+        <%= f.label :month6_id, "PICTURE6",class:"month-label" %>
+        <%= f.hidden_field :img6, value:@images[5].id %>
+        <%= f.collection_select(:month6_id, Month6.all, :id, :name, {}, {class:"month_select_box", id:"select6"}) %>
+      </div>
+      <div class="pict">
+        <%= f.label :month7_id, "PICTURE7",class:"month-label" %>
+        <%= f.hidden_field :img7, value:@images[6].id %>
+        <%= f.collection_select(:month7_id, Month7.all, :id, :name, {}, {class:"month_select_box", id:"select7"}) %>
+      </div>
+      <div class="pict">
+        <%= f.label :month8_id, "PICTURE8",class:"month-label" %>
+        <%= f.hidden_field :img8, value:@images[7].id %>
+        <%= f.collection_select(:month8_id, Month8.all, :id, :name, {}, {class:"month_select_box", id:"select8"}) %>
+      </div>
+      <div class="pict">
+        <%= f.label :month9_id, "PICTURE9",class:"month-label" %>
+        <%= f.hidden_field :img9, value:@images[8].id %>
+        <%= f.collection_select(:month9_id, Month9.all, :id, :name, {}, {class:"month_select_box", id:"select9"}) %>
+      </div>
+      <div class="pict">
+        <%= f.label :month10_id, "PICTURE10",class:"month-label" %>
+        <%= f.hidden_field :img10, value:@images[9].id %>
+        <%= f.collection_select(:month10_id, Month10.all, :id, :name, {}, {class:"month_select_box", id:"select10"}) %>
+      </div>
+      <div class="pict">
+        <%= f.label :month11_id, "PICTURE11",class:"month-label" %>
+        <%= f.hidden_field :img11, value:@images[10].id %>
+        <%= f.collection_select(:month11_id, Month11.all, :id, :name, {}, {class:"month_select_box", id:"select11"}) %>
+      </div>
+      <div class="pict">
+        <%= f.label :month12_id, "PICTURE12",class:"month-label" %>
+        <%= f.hidden_field :img12, value:@images[11].id %>
+        <%= f.collection_select(:month12_id, Month12.all, :id, :name, {}, {class:"month_select_box", id:"select12"}) %>
+      </div>
+    </div>
+    <%= render partial:"selected" %>
+    <div class="send-btn-box">
+      <%= f.submit "SEND", class:"send-btn" %>
+    </div>
+  <% end %>
+</div>
