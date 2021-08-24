@@ -7,7 +7,6 @@ class User < ApplicationRecord
   validates :firstname, presence: true
   validates :lastname, presence: true
   validates :icon, presence: true
-
   has_one_attached :icon
 
   has_many :images
