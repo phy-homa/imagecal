@@ -65,17 +65,17 @@ https://gyazo.com/9dcb7acfc6251942a11c170defc10638
 画像を12枚カートに入れ、選んだ12枚を何月の画像にするのかをプルダウンリストで選べるようにしました。その後、プレビューで1月から順番に日程表がセットになったカレンダーを確認してから、購入できるようにしました。
 
 # 使用技術（開発環境）
-Ruby 2.6.5
-Ruby on Rails 6.0.0
-HTML
-Javascript
-MySQL2 0.4.4
-Github
-GithubDesktop
-rspec-rails 4.0.0
-AWS(EC2)
-unicorn
-Visual Studio Code
+Ruby 2.6.5 / 
+Ruby on Rails 6.0.0 / 
+HTML / 
+Javascript / 
+MySQL2 0.4.4 / 
+Github / 
+GithubDesktop / 
+rspec-rails 4.0.0 / 
+AWS(EC2) / 
+unicorn / 
+Visual Studio Code / 
 
 # 課題や今後実装したい機能
 - 課題は、リファクタリングです。
