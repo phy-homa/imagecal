@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.16.0"
+lock '3.16.0'
 
 set :application, "imagecal"
-set :repo_url, "https://github.com/phy-homa/imagecal.git"
+set :repo_url, "https://github.com:phy-homa/imagecal.git"
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 set :rbenv_type, :user
 set :rbenv_ruby, '2.6.5'
