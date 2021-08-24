@@ -1,4 +1,4 @@
-#サーバ上でのアプリケーションコードが設置されているディレクトリを変数に入れておく
+
 app_path = File.expand_path('../../../', __FILE__)
 
 worker_processes 1
@@ -11,7 +11,7 @@ listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
 
 stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
 
-stdout_path "#{app_path}/shared/dlog/unicorn.stdout.log"
+stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
 
 
 timeout 60
