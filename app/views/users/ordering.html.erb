@@ -3,7 +3,7 @@
   <div class="user-orderings">
   <% @orders.each do |order| %>
   <div class="ordering">
-    <%= link_to "注文日：　　#{l order.created_at}", show_order_calendar_path(order.id), class:"imagecal-link"%>
+    <%= link_to "注文日：　　#{l order.created_at,format: :long}", show_order_calendar_path(order.id), class:"imagecal-link"%>
   </div>
   <% end %>
 </div>
