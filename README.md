@@ -7,6 +7,7 @@ Imagecal
 # 本番環境
 ## デプロイ先
 - http://35.76.155.128/
+- https://imagecal.herokuapp.com/ (SNS認証はherokuのみ実装しています)
 
 ## テストアカウント
 ### ユーザー名：テスト1
