@@ -1,6 +1,16 @@
 <div class="main">
   <p class="devise-title">Imagecalにログイン</p>
+  <div class="user-login-method">
+      <p class="login-method">SNS認証でログイン：</p>
+      <div>
+        <%= link_to (image_tag 'google-icon.png', class:"login-icon"), user_google_oauth2_omniauth_authorize_path, method: :post %><br />
+      </div>
+      <div>
+        <%= link_to (image_tag 'facebook-icon.png', class:"login-icon"), user_facebook_omniauth_authorize_path, method: :post %><br />
+      </div>
+    </div>
   <div class="devise-form">
+    <p class="login-method">メールでログイン：</p>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= flash[:notice] %>
       <%= flash[:alert] %>
