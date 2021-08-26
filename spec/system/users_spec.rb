@@ -4,7 +4,8 @@ RSpec.describe "新規登録", type: :system do
   before do
     @user = FactoryBot.build(:user)
   end
-  # bundle exec rspec spec/system/users_spec.rb
+
+# bundle exec rspec spec/system/users_spec.rb
 
   context '新規登録できる時' do
     it 'メールアドレス入力を選択し、必要項目を入力と、新規登録できる' do
@@ -17,12 +18,14 @@ RSpec.describe "新規登録", type: :system do
       # 認証を利用しないを選択し、新規登録ページに遷移する
       visit new_user_registration_path
       # ユーザー情報を入力する
-      fill_in 'Nickname', with: @user.nickname
-      fill_in 'Firstname', with: @user.firstname
-      fill_in 'Lastname', with: @user.lastname
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
-      fill_in 'Password confirmation', with: @user.password
+      fill_in 'ニックネーム', with: @user.nickname
+      fill_in '名字', with: @user.firstname
+      fill_in '名前', with: @user.lastname
+      fill_in 'Eメール', with: @user.email
+      image_path = Rails.root.join('public/images/test_image.png')
+      attach_file('user[icon]', image_path, make_visible: true)
+      fill_in 'パスワード', with: @user.password
+      fill_in '確認用パスワード', with: @user.password
       # 登録ボタンを押す
       expect{
         find('input[name="commit"]').click
@@ -71,11 +74,11 @@ RSpec.describe "新規登録", type: :system do
       # 認証を利用しないを選択し、新規登録ページに遷移する
       visit new_user_registration_path
       # ユーザー情報を入力する(nickname未入力)
-      fill_in 'Firstname', with: @user.firstname
-      fill_in 'Lastname', with: @user.lastname
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
-      fill_in 'Password confirmation', with: @user.password
+      fill_in '名字', with: @user.firstname
+      fill_in '名前', with: @user.lastname
+      fill_in 'Eメール', with: @user.email
+      fill_in 'パスワード', with: @user.password
+      fill_in '確認用パスワード', with: @user.password
       # 登録ボタンを押す
       expect{
         find('input[name="commit"]').click
@@ -100,10 +103,10 @@ RSpec.describe "ログイン", type: :system do
       # ログインページへ遷移する
       visit new_user_session_path
       # 正しいユーザー情報を入力する
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
+      fill_in 'Eメール', with: @user.email
+      fill_in 'パスワード', with: @user.password
       # ログインボタンを押す
-      click_on 'Log in'
+      find('input[name="commit"]').click
       # トップページへ遷移することを確認する
       expect(current_path).to eq root_path
       # ユーザー名、カーソルを合わせるとログアウトボタンが表示されることを確認する
@@ -124,13 +127,12 @@ RSpec.describe "ログイン", type: :system do
       # ログインページへ遷移する
       visit new_user_session_path
       # ユーザー情報を入力する(Email不一致)
-      fill_in 'Email', with: "123123213@test.com"
-      fill_in 'Password', with: @user.password
+      fill_in 'Eメール', with: "123123213@test.com"
+      fill_in 'パスワード', with: @user.password
       # ログインボタンを押す
-      click_on 'Log in'
+      find('input[name="commit"]').click
       # ログインページへ戻されることを確認する
       expect(current_path).to eq user_session_path
     end
   end
 end
-
