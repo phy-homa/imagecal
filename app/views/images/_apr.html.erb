@@ -1,4 +1,4 @@
-<% if @images_apr.exists? %>
+<% if @images_apr.present? %>
   <% @images_apr.each do |image|%>
       <div class="select-image">
       <div class="picture-box">
@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="bottom-data">
-          <%if image.tags.exists?%>
+          <%if image.tags.present?%>
             <% image.tags.each do |tag|%>
               <%= "##{tag.name}" %>
             <% end%>

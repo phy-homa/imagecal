@@ -18,7 +18,7 @@
           </div>
           <div class="bottom-data">
             <div>
-              <%if line_item.image.tags.exists?%>
+              <%if line_item.image.tags.present?%>
                 <% line_item.image.tags.each do |tag|%>
                   <%= "##{tag.name}" %>
                 <% end%>

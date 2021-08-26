@@ -22,7 +22,7 @@
           </div>
           <div class="post-picture-info">
             <%= "シーズン：　#{image.season.name}"%><br />
-            <%if image.tags.exists?%>
+            <%if image.tags.present?%>
               <% image.tags.each do |tag|%>
                 <%= "##{tag.name}　"%>
               <% end %>

@@ -1,4 +1,4 @@
-<% if @images_sep.exists? %>
+<% if @images_sep.present? %>
   <% @images_sep.each do |image|%>
       <div class="select-image">
       <div class="picture-box">
@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="bottom-data">
-          <%if image.tags.exists?%>
+          <%if image.tags.present?%>
             <% image.tags.each do |tag|%>
               <%= "##{tag.name}" %>
             <% end%>
