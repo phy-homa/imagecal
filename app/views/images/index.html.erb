@@ -22,8 +22,8 @@
     <% if user_signed_in? %>
       <div class="bottom-menu">
         <div class="image-post-link">
-          <%= link_to (image_tag 'icon_post.png', class:"post-icon"), new_image_path, class:"image_post"%>
-          <p>投稿する</p>
+          <%= link_to (image_tag 'icon_post.png', class:"post-icon", alt:"icon-post"), new_image_path, class:"image_post"%>
+            <p>投稿する</p>
         </div>
         <% unless @cart.nil? %>
           <div class="cart-inside">

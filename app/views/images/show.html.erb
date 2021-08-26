@@ -38,7 +38,7 @@
           </div>
           <% if current_user.id == @image.user_id%>
             <div class="imagecal-btn">
-              <%= link_to 'イラストを削除', image_path(@image.id), method: :delete, class:"imagecal-link"%>
+              <%= link_to 'イラストを削除', image_path(@image.id), method: :delete, class:"imagecal-link", name:"picture-delete"%>
             </div>
           <% end %>
         <% end %>

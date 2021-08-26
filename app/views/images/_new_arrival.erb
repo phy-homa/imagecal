@@ -3,7 +3,7 @@
     <% @images.each do |image|%>
       <div class="select-image">
         <div class="picture-box">
-          <%= link_to (image_tag image.picture, class:"image-picture"), image_path(image.id) %>
+          <%= link_to (image_tag image.picture, class:"image-picture", alt:"picture"), image_path(image.id) %>
         </div>
         <div class="image-data">
           <div class="top-data">
