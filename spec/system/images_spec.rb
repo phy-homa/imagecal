@@ -101,6 +101,7 @@ RSpec.describe "イラスト削除", js: true do
     #ログアウトする
     Capybara.current_driver = :selenium
     find('.menu').click
+    click_on "ログアウト"
     Capybara.use_default_driver
     #他のユーザーがログインする
     another_user = FactoryBot.create(:user)

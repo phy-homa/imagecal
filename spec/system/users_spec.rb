@@ -136,3 +136,28 @@ RSpec.describe "ログイン", type: :system do
     end
   end
 end
+
+RSpec.describe "ログアウト時", js: true do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+  context 'ログアウトするとき' do
+    it 'ログアウトが正常にできた時' do
+      #ログインをする
+      sign_in(@user)
+      #サインアップページへ遷移するボタンやログインページへ遷移するボタンが表示されていないことを確認する
+      expect(page).to have_no_content('新規登録')
+      expect(page).to have_no_content('ログイン')
+      #メニューを押すとログアウトボタンがあることを確認する
+      Capybara.current_driver = :selenium
+      find('.menu').click
+      expect(page).to have_content("ログアウト")
+      #ログアウトボタンをクリックする
+      click_on "ログアウト"
+      ##サインアップページへ遷移するボタンやログインページへ遷移するボタンが表示されていることを確認する
+      expect(page).to have_content('新規登録')
+      expect(page).to have_content('ログイン')
+      Capybara.use_default_driver
+    end
+  end
+end
