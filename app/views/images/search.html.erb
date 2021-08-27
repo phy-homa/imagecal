@@ -1,28 +1,37 @@
 <div class="page">
-  
   <div class= "main">
     <div class="app_info">
       <%= image_tag 'app-info-icon', class:"app-info-icon" %>
     </div>
-  <div class="seach-fom">
-    <%= form_with(url: search_images_path, local: true, method: :get) do |f| %>
-      <%= f.text_field :keyword, placeholder: "検索する" %>
-      <%= f.submit "検索" %>
+    <div class="new-arrival">
+      <div>
+        <p class="image-index-title">＜新着順＞</p>
+      </div>
+      <div class="search-form">
+        <%= form_with(url: search_images_path, local: true, method: :get) do |f| %>
+          <%= f.text_field :keyword, placeholder: "タグ検索" %>
+          <%= f.submit "検索", class:"tag-search-btn" %>
+        <% end %>
+      </div>
+    </div>
+    <%= render partial:"new_arrival" %>
+    <div class="monthly">
+      <p class="image-index-title">＜シーズン別＞</p>
+      <%= render partial:"tab" %>
+    </div>
+    <% if user_signed_in? %>
+      <div class="bottom-menu">
+        <div class="image-post-link">
+          <%= link_to (image_tag 'icon_post.png', class:"post-icon", alt:"icon-post"), new_image_path, class:"image_post"%>
+            <p>投稿する</p>
+        </div>
+        <% unless @cart.nil? %>
+          <div class="cart-inside">
+            <%= link_to (image_tag 'icon_cart.png', class:"cart-icon"), cart_path(@cart.id) %>
+            <p>カートを見る</p>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
-  <%= render partial:"new_arrival" %>
-  <% if user_signed_in? %>
-    <div class="bottom-menu">
-      <div class="image-post-link">
-        <%= link_to (image_tag 'icon_post.png', class:"post-icon"), new_image_path, class:"image_post"%>
-        <p>投稿する</p>
-      </div>
-      <% unless @cart.nil? %>
-        <div class="cart-inside">
-          <%= link_to (image_tag 'icon_cart.png', class:"cart-icon"), cart_path(@cart.id) %>
-          <p>カートを見る</p>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
 </div>
