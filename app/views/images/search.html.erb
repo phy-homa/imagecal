@@ -2,7 +2,7 @@
   
   <div class= "main">
     <div class="app_info">
-      アプリ概要
+      <%= image_tag 'app-info-icon', class:"app-info-icon" %>
     </div>
   <div class="seach-fom">
     <%= form_with(url: search_images_path, local: true, method: :get) do |f| %>
