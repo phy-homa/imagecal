@@ -12,7 +12,6 @@ class ImagesController < ApplicationController
 
   def create
     @image = ImageTag.new(image_params)
-
     if @image.valid?
       @image.save
       @image.tags_save(@tag_list)

@@ -27,7 +27,7 @@
         </div>
         <% unless @cart.nil? %>
           <div class="cart-inside">
-            <%= link_to (image_tag 'icon_cart.png', class:"cart-icon"), cart_path(@cart.id) %>
+            <%= link_to (image_tag 'icon_cart.png', class:"cart-icon", alt:"icon-cart"), cart_path(@cart.id) %>
             <p>カートを見る</p>
           </div>
         <% end %>

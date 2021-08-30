@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-# bundle exec rspec spec/system/images_spec.rb
-
 RSpec.describe "イラスト投稿", type: :system do
   before do
     @user = FactoryBot.create(:user)
@@ -78,6 +76,7 @@ RSpec.describe "イラスト削除", js: true do
     sign_in(@user)
     #イラストを投稿する
     post_image(@image_tag)
+    abother_image_tag = FactoryBot
     #投稿したイラストがブラウザに表示されていることを確認する
     expect(page).to have_selector("img[src$='test_image.png']")
     #画像をクリックしてイラスト詳細ページに遷移する
@@ -121,7 +120,7 @@ RSpec.describe "イラスト削除", js: true do
     #ログアウトする
     Capybara.current_driver = :selenium
     find('.menu').click
-    Capybara.use_default_driver
+    click_on "ログアウト"
     #ホーム画面に遷移する
     visit root_path
     #投稿したイラストがブラウザに表示されていることを確認する
@@ -130,5 +129,112 @@ RSpec.describe "イラスト削除", js: true do
     click_on "picture"
     #イラスト削除ボタンがあることを確認する
     expect(page).to have_no_content("イラストを削除")
+    Capybara.use_default_driver
+  end
+end
+RSpec.describe "カート追加", js: true do
+  before do
+    @user = FactoryBot.create(:user)
+    @image_tag = FactoryBot.build(:image_tag, user_id: @user.id)
+    @image_tag2 = FactoryBot.build(:image_tag, user_id: @user.id)
+    sleep(1)
+  end
+  context 'カート機能' do
+    it 'イラストをカートに入れる' do
+      #ログインする
+      sign_in(@user)
+      #イラストを投稿する
+      post_image(@image_tag)
+      #投稿したイラストがブラウザに表示されていることを確認する
+      Capybara.current_driver = :selenium
+      expect(page).to have_selector("img[src$='test_image.png']")
+      #画像をクリックしてイラスト詳細ページに遷移する
+      click_on "picture"
+      #カートに入れるボタンがあることを確認する
+      expect(page).to have_content("カートに入れる")
+      #カートに入れるボタンを押すとLine_itemsモデルのカウントが1上がることを確認する
+      expect{click_on "カートに入れる"}.to change{LineItem.count}.by(1)
+      #カートの中のページに遷移したことを確認する
+      expect(page).to have_content("＜カートのなか＞")
+      #先程カートに入れたイラストが表示されていることを確認する
+      expect(page).to have_selector("img[src$='test_image.png']")
+      Capybara.use_default_driver
+    end
+    it '未ログインのユーザーはカートに入れるボタンがない' do
+      #ログインする
+      sign_in(@user)
+      #イラストを投稿する
+      post_image(@image_tag)
+      #ログアウトする
+      Capybara.current_driver = :selenium
+      find('.menu').click
+      click_on "ログアウト"
+      #投稿したイラストがブラウザに表示されていることを確認する
+      expect(page).to have_selector("img[src$='test_image.png']")
+      #画像をクリックしてイラスト詳細ページに遷移する
+      click_on "picture"
+      #カートに入れるボタンがないことを確認する
+      expect(page).to have_no_content("カートに入れる")
+      Capybara.use_default_driver
+    end
+    it 'カートに入ったイラストをあとから確認できる' do
+      #ログインする
+      sign_in(@user)
+      #イラストを投稿する
+      post_image(@image_tag)
+      #投稿したイラストがブラウザに表示されていることを確認する
+      Capybara.current_driver = :selenium
+      expect(page).to have_selector("img[src$='test_image.png']")
+      #カートを見るボタンがないことを確認する
+      expect(page).to have_no_content("カートを見る")
+      #画像をクリックしてイラスト詳細ページに遷移する
+      click_on "picture"
+      #カートに入れるボタンがあることを確認する
+      expect(page).to have_content("カートに入れる")
+      #カートに入れるボタンを押すとLine_itemsモデルのカウントが1上がることを確認する
+      click_on "カートに入れる"
+      #カートの中のページに遷移したことを確認する
+      expect(page).to have_content("＜カートのなか＞")
+      #先程カートに入れたイラストが表示されていることを確認する
+      expect(page).to have_selector("img[src$='test_image.png']")
+      #トップに戻るボタンを押す
+      click_on "トップに戻る"
+      #カートを見るボタンがあることを確認する
+      expect(page).to have_content("カートを見る")
+      #カートを見るボタンを押す
+      click_on "icon-cart"
+      #カートの中のページに遷移したことを確認する
+      expect(page).to have_content("＜カートのなか＞")
+      #先程カートに入れたイラストが表示されていることを確認する
+      expect(page).to have_selector("img[src$='test_image.png']")
+      Capybara.use_default_driver
+    end
+    it 'カートに入ったイラストを削除できる' do
+      #ログインする
+      sign_in(@user)
+      #イラストを2つ投稿し、2つともカートに入れる
+      Capybara.current_driver = :selenium
+      add_cart_images(@image_tag,@image_tag2)
+      expect(LineItem.count).to eq 2
+      #カートを見るボタンでカートの中のページに遷移する
+      click_on "icon-cart"
+      #削除ボタンを押すと、Line_itemsモデルのカウントが2から1になることを確認する（1つ削除）
+      expect{click_on "削除", match: :first}.to change{LineItem.count}.from(2).to(1)
+      Capybara.use_default_driver
+    end
+    it 'カートを空にするを押すとカート内のイメージが全てなくなる' do
+      #ログインする
+      sign_in(@user)
+      #イラストを2つ投稿し、2つともカートに入れる
+      Capybara.current_driver = :selenium
+      add_cart_images(@image_tag,@image_tag2)
+      expect(LineItem.count).to eq 2
+      #カートを見るボタンでカートの中のページに遷移する
+      click_on "icon-cart"
+      #カートを空にするボタンを押すと、LineItemモデルのカウントが0になる
+      expect{click_on "カートを空にする"}.to change{LineItem.count}.from(2).to(0)
+      #カートを見るボタンがないことを確認する
+      expect(page).to have_no_content("カートを見る")
+    end
   end
 end
