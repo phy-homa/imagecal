@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :destroy, :notice]
   before_action :show_monthly, only: :index
 
   def index
@@ -33,6 +33,10 @@ class ImagesController < ApplicationController
 
   def search
     @images = Tag.search(params[:keyword])
+  end
+
+  def notice
+
   end
 
   private

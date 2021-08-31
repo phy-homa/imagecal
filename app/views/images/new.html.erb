@@ -1,4 +1,7 @@
 <div class="main">
   <p class="post-title">＜投稿ページ＞</p>
+    <div class="post-notice">
+      <p>投稿をするときは『<%= link_to "投稿するときの注意点", notice_images_path, target: :_blank %>』を確認ください！</p>
+    </div>
     <%= render partial:"form" %>
 </div>

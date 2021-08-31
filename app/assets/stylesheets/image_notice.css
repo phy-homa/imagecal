@@ -1,0 +1,24 @@
+.post-notice-main{
+  border: 5px solid khaki;
+  width: 80%;
+  margin: 50px auto ;
+  display: flex;
+  justify-content: space-around;
+}
+.calendar-size{
+  width: 100%;
+  border: 1px solid black;
+  margin: auto;
+}
+.notice-left-content{
+  width: 60%;
+  margin: 20px 0;
+}
+.notice-right-content{
+  width: 30%;
+  margin: 20px 0;
+}
+
+.notice-subtitle{
+  margin: 50px 0 30px;
+}

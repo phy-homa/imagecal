@@ -38,5 +38,13 @@
 .submit-form{
 display: flex;
 justify-content: center;
-
+}
+.post-notice{
+  color: darkolivegreen;
+  width: 70%;
+  margin: 10px auto;
+}
+.post-notice a{
+  color: rgb(55, 77, 18);
+  font-weight: 700;
 }

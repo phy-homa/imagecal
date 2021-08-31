@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :images, only: [:index, :new, :create, :show, :destroy] do
    collection do
      get 'search'
+     get 'notice'
    end
   end
   resources :users, only: [:new, :show, :index]
