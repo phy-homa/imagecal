@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :ordering]
 
   def new
-
   end
 
   def show
@@ -16,8 +15,6 @@ class UsersController < ApplicationController
 
   def ordering
     @orders = current_user.orders.includes(:user)
-    
-    
   end
 end
 @orders

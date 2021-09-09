@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy, :notice]
   before_action :show_monthly, only: :index
+  before_action :find_image, only: [:show, :destroy]
 
   def index
     @images = Image.includes(:user).order(created_at: :desc)
@@ -22,11 +23,9 @@ class ImagesController < ApplicationController
   end
 
   def show
-    @image = Image.find(params[:id])
   end
 
   def destroy
-    @image = Image.find(params[:id])
     @image.destroy
     redirect_to root_path
   end
@@ -36,7 +35,6 @@ class ImagesController < ApplicationController
   end
 
   def notice
-
   end
 
   private
@@ -64,5 +62,9 @@ class ImagesController < ApplicationController
     @images_win = Image.show_win
     @images_all = Image.show_all
     @images_etc = Image.show_etc
+  end
+
+  def find_image
+    @image = Image.find(params[:id])
   end
 end

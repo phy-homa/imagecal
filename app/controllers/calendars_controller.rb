@@ -1,5 +1,6 @@
 class CalendarsController < ApplicationController
   before_action :authenticate_user!
+
   def new
     @images = current_cart.images
     @calendar = Calendar.new
